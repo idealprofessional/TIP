@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Ideal Professional</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Reset and Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Toyota Type', Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #FFFFFF;
+      color: #333333;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+    }
+    .container {
+      width: 90%;
+      max-width: 1400px;
+      margin: auto;
+    }
+    
+    /* Header */
+    header {
+      background-color: #FFFFFF;
+      color: #333333;
+      padding: 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .top-bar {
+      background-color: #EB0A1E;
+      color: white;
+      padding: 8px 0;
+      font-size: 0.9em;
+    }
+    .top-bar .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    .top-bar-left {
+      display: flex;
+      gap: 20px;
+    }
+    .top-bar-right {
+      display: flex;
+      gap: 20px;
+    }
+    .top-bar a {
+      color: white;
+      font-weight: 600;
+      font-size: 0.85em;
+    }
+    .top-bar a:hover {
+      text-decoration: underline;
+    }
+    .main-header {
+      padding: 15px 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-weight: bold;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+    }
+    .logo h1 {
+      font-size: 1.5rem;
+      color: #EB0A1E;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+    nav ul li a {
+      color: #333333;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.9em;
+      padding: 10px 0;
+      position: relative;
+    }
+    nav ul li a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #EB0A1E;
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s;
+    }
+    nav ul li a:hover:after {
+      width: 100%;
+    }
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #333333;
+    }
+    .header-buttons {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+    .header-btn {
+      padding: 8px 15px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.9em;
+      text-transform: uppercase;
+    }
+    .header-btn.outline {
+      border: 2px solid #EB0A1E;
+      color: #EB0A1E;
+      background: transparent;
+    }
+    .header-btn.solid {
+      background-color: #EB0A1E;
+      color: white;
+      border: 2px solid #EB0A1E;
+    }
+    
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 150px 20px;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .hero p {
+      font-size: 1.4em;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn {
+      background-color: #EB0A1E;
+      color: #FFFFFF;
+      padding: 15px 35px;
+      border: none;
+      border-radius: 3px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    .btn:hover {
+      background-color: #C00A1E;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .btn.secondary {
+      background-color: transparent;
+      border: 2px solid #FFFFFF;
+      margin-left: 15px;
+    }
+    .btn.secondary:hover {
+      background-color: #FFFFFF;
+      color: #333333;
+    }
+    
+    /* Sections */
+    section {
+      padding: 80px 0;
+    }
+    .section-title {
+      text-align: center;
+      margin-bottom: 60px;
+      font-size: 2.5em;
+      color: #333333;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: #EB0A1E;
+    }
+    
+    /* Services Section */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .service {
+      background-color: #FFFFFF;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid transparent;
+    }
+    .service:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      border-bottom: 3px solid #EB0A1E;
+    }
+    .service i {
+      font-size: 2.5em;
+      color: #EB0A1E;
+      margin-bottom: 20px;
+    }
+    .service h3 {
+      margin-bottom: 15px;
+      color: #333333;
+      font-size: 1.4em;
+    }
+    .service p {
+      color: #666666;
+    }
+    
+    /* About Section */
+    #about {
+      background-color: #F8F8F8;
+      position: relative;
+    }
+    #about .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #about p {
+      max-width: 800px;
+      text-align: center;
+      margin: 0 auto;
+      font-size: 1.1em;
+      color: #555555;
+      line-height: 1.8;
+    }
+    
+    /* Testimonials Section */
+    .testimonials-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .testimonial {
+      background-color: #FFFFFF;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      position: relative;
+    }
+    .testimonial:before {
+      content: '\201C';
+      font-size: 5em;
+      color: #EB0A1E;
+      opacity: 0.1;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+    }
+    .testimonial h3 {
+      margin-bottom: 10px;
+      color: #333333;
+      display: flex;
+      align-items: center;
+    }
+    .testimonial h3:after {
+      content: '';
+      height: 2px;
+      width: 30px;
+      background-color: #EB0A1E;
+      margin-left: 10px;
+    }
+    .testimonial p {
+      color: #666666;
+      font-style: italic;
+    }
+    .testimonial-rating {
+      color: #FFD700;
+      margin-top: 10px;
+    }
+    .testimonial-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 15px;
+    }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .testimonial-info h3 {
+      margin-bottom: 5px;
+    }
+    .testimonial-info p {
+      font-style: normal;
+      color: #999;
+      font-size: 0.9em;
+    }
+    
+    /* Contact Section */
+    #contact {
+      background-color: #F8F8F8;
+    }
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .contact-info {
+      color: #333333;
+    }
+    .contact-info h3 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #EB0A1E;
+    }
+    .contact-info p {
+      margin-bottom: 30px;
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+    .contact-details {
+      margin-top: 30px;
+    }
+    .contact-details div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .contact-details i {
+      color: #EB0A1E;
+      font-size: 1.2em;
+      margin-right: 15px;
+      width: 20px;
+    }
+    .contact-form {
+      background-color: #FFFFFF;
+      padding: 40px;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    .contact-form input, .contact-form textarea, .contact-form select {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border: 1px solid #DDDDDD;
+      border-radius: 3px;
+      font-family: inherit;
+      font-size: 1em;
+      transition: border 0.3s ease;
+    }
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form select:focus {
+      outline: none;
+      border-color: #EB0A1E;
+    }
+    .contact-form button {
+      background-color: #EB0A1E;
+      color: #FFFFFF;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      width: 100%;
+    }
+    .contact-form button:hover {
+      background-color: #C00A1E;
+    }
+    
+    /* Features Section */
+    .features-section {
+      background-color: #FFFFFF;
+      padding: 60px 0;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    .feature {
+      text-align: center;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+    .feature i {
+      font-size: 2.5em;
+      color: #EB0A1E;
+      margin-bottom: 20px;
+    }
+    .feature h3 {
+      margin-bottom: 15px;
+      color: #333333;
+      font-size: 1.3em;
+    }
+    .feature p {
+      color: #666666;
+      font-size: 0.95em;
+    }
+    
+    /* Models Grid - Toyota Style */
+    .models-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .model-card {
+      background-color: #FFFFFF;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .model-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+    .model-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .model-info {
+      padding: 20px;
+    }
+    .model-info h3 {
+      margin-bottom: 10px;
+      color: #333333;
+      font-size: 1.3em;
+    }
+    .model-info p {
+      color: #666666;
+      margin-bottom: 15px;
+      font-size: 0.9em;
+    }
+    .model-price {
+      font-weight: bold;
+      color: #EB0A1E;
+      font-size: 1.2em;
+      margin-bottom: 15px;
+    }
+    .model-btn {
+      display: inline-block;
+      background-color: #EB0A1E;
+      color: #FFFFFF;
+      padding: 8px 15px;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80') center/cover no-repeat;
+      color: #FFFFFF;
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .cta h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+    }
+    .cta p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #222222;
+      color: #FFFFFF;
+      padding: 60px 0 20px;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    .footer-column h3 {
+      color: #FFFFFF;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .footer-column h3:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: #EB0A1E;
+    }
+    .footer-column ul {
+      list-style: none;
+    }
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+    .footer-column ul li a {
+      color: #AAAAAA;
+      transition: color 0.3s ease;
+    }
+    .footer-column ul li a:hover {
+      color: #EB0A1E;
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #444444;
+      color: #AAAAAA;
+      font-size: 0.9em;
+    }
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .social-links a {
+      color: #FFFFFF;
+      background-color: #333333;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+      background-color: #EB0A1E;
+      transform: translateY(-3px);
+    }
+    
+    /* Toyota-style Cookie Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #FFFFFF;
+      padding: 15px 20px;
+      box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+    .cookie-text {
+      flex: 1;
+      padding-right: 20px;
+    }
+    .cookie-text h4 {
+      margin-bottom: 5px;
+      color: #333333;
+    }
+    .cookie-text p {
+      font-size: 0.9em;
+      color: #666666;
+    }
+    .cookie-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .cookie-btn {
+      padding: 8px 15px;
+      border-radius: 3px;
+      font-weight: 600;
+      font-size: 0.9em;
+      cursor: pointer;
+    }
+    .cookie-btn.accept {
+      background-color: #EB0A1E;
+      color: white;
+      border: none;
+    }
+    .cookie-btn.settings {
+      background-color: transparent;
+      border: 1px solid #CCCCCC;
+      color: #666666;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+      }
+      .contact-info {
+        order: 2;
+      }
+      .contact-form {
+        order: 1;
+        margin-bottom: 40px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.8em;
+      }
+      .hero p {
+        font-size: 1.2em;
+      }
+      .section-title {
+        font-size: 2.2em;
+      }
+      .top-bar .container {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+      }
+      nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #FFFFFF;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 1;
+      }
+      nav ul.active {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .hero h1 {
+        font-size: 2.2em;
+      }
+      .hero p {
+        font-size: 1.1em;
+      }
+      section {
+        padding: 60px 0;
+      }
+      .section-title {
+        font-size: 2em;
+        margin-bottom: 40px;
+      }
+      .header-buttons {
+        display: none;
+      }
+      .cookie-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .cookie-text {
+        margin-bottom: 15px;
+        padding-right: 0;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero {
+        padding: 100px 20px;
+      }
+      .hero h1 {
+        font-size: 1.8em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+      .btn {
+        padding: 12px 25px;
+        font-size: 0.9em;
+      }
+      .btn.secondary {
+        margin-left: 0;
+        margin-top: 15px;
+      }
+      .section-title {
+        font-size: 1.8em;
+      }
+      .contact-form {
+        padding: 30px 20px;
+      }
+      .top-bar-left, .top-bar-right {
+        flex-direction: column;
+        gap: 5px;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container">
+      <div class="top-bar-left">
+        <a href="#"><i class="fas fa-map-marker-alt"></i> Our Location</a>
+        <a href="#"><i class="fas fa-phone"></i> +447435344535</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="#">Support</a>
+        <a href="#">My Account</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="container main-header">
+      <nav>
+        <div class="logo">
+          <h1>The Ideal Professional</h1>
+        </div>
+        <button class="mobile-menu-btn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="header-buttons">
+          <a href="#contact" class="header-btn outline">Login</a>
+          <a href="#contact" class="header-btn solid">Get Started</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Stand Out. Get Noticed. Land Your Dream Job.</h1>
+      <p>We optimize your resume, LinkedIn, and career visibility to fast-track your success.</p>
+      <a href="#contact" class="btn">Get Started Today</a>
+      <a href="#services" class="btn secondary">Learn More</a>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features-section">
+    <div class="container">
+      <div class="features">
+        <div class="feature">
+          <i class="fas fa-chart-line"></i>
+          <h3>Boost Your Career</h3>
+          <p>Strategic career planning and optimization to help you reach your professional goals faster.</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-file-alt"></i>
+          <h3>ATS-Optimized Resumes</h3>
+          <p>Get past the automated screening systems and into the hands of hiring managers with our expert resume services.</p>
+        </div>
+        <div class="feature">
+          <i class="fas fa-handshake"></i>
+          <h3>Expert Guidance</h3>
+          <p>Work with industry professionals who understand what employers are looking for in today's competitive market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services">
+        <div class="service">
+          <i class="fas fa-file-alt"></i>
+          <h3>Professional Resume Writing & Optimization</h3>
+          <p>Crafting ATS-friendly resumes that highlight your strengths and get you noticed by employers.</p>
+        </div>
+        <div class="service">
+          <i class="fab fa-linkedin"></i>
+          <h3>LinkedIn Profile Enhancement</h3>
+          <p>Positioning you as a top candidate in your industry with an optimized professional profile.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-comments"></i>
+          <h3>Interview Coaching & Career Strategy</h3>
+          <p>Helping you ace interviews with confidence and develop a winning career advancement plan.</p>
+        </div>
+        <div class="service">
+          <i class="fas fa-user-tie"></i>
+          <h3>Personal Branding</h3>
+          <p>Elevating your professional identity for long-term success in today's competitive job market.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Packages - Toyota Style -->
+  <section style="background-color: #F8F8F8;">
+    <div class="container">
+      <h2 class="section-title">Our Packages</h2>
+      <div class="models-grid">
+        <div class="model-card">
+          <img src="https://images.unsplash.com/photo-1573496130141-209d200cebd8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" alt="Basic Package" class="model-image">
+          <div class="model-info">
+            <h3>Essential Package</h3>
+            <p>Perfect for entry-level professionals looking to start their career journey.</p>
+            <div class="model-price">From £199</div>
+            <a href="#contact" class="model-btn">Learn More</a>
+          </div>
+        </div>
+        <div class="model-card">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Professional Package" class="model-image">
+          <div class="model-info">
+            <h3>Professional Package</h3>
+            <p>Comprehensive career services for mid-level professionals seeking advancement.</p>
+            <div class="model-price">From £349</div>
+            <a href="#contact" class="model-btn">Learn More</a>
+          </div>
+        </div>
+        <div class="model-card">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Executive Package" class="model-image">
+          <div class="model-info">
+            <h3>Executive Package</h3>
+            <p>Premium services for senior professionals and executives targeting top positions.</p>
+            <div class="model-price">From £599</div>
+            <a href="#contact" class="model-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Transform Your Career?</h2>
+      <p>Join thousands of professionals who have accelerated their career growth with our expert services.</p>
+      <a href="#contact" class="btn">Schedule a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Who We Are</h2>
+      <p>At The Ideal Professional, we believe that every individual is a brand with the potential to stand out in the competitive labor market. Our mission is to equip professionals with the right tools, strategies, and confidence to secure career opportunities and thrive in their chosen fields. With years of experience in recruitment and career development, our team understands what employers are looking for and how to position you for success.</p>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title">Success Stories</h2>
+      <div class="testimonials-container">
+        <div class="testimonials">
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="testimonial-image">
+              <div class="testimonial-info">
+                <h3>John Doe</h3>
+                <p>Marketing Director</p>
+              </div>
+            </div>
+            <p>"Thanks to The Ideal Professional, I landed my dream job within weeks! Their resume optimization service completely transformed my application and gave me the confidence I needed."</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="testimonial-image">
+              <div class="testimonial-info">
+                <h3>Jane Smith</h3>
+                <p>Software Engineer</p>
+              </div>
+            </div>
+            <p>"Their resume optimization service is top-notch. After working with The Ideal Professional team, I received three interview calls in the first week. Highly recommended for anyone serious about their career!"</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="testimonial-header">
+              <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Johnson" class="testimonial-image">
+              <div class="testimonial-info">
+                <h3>Michael Johnson</h3>
+                <p>Financial Analyst</p>
+              </div>
+            </div>
+            <p>"The LinkedIn profile makeover was a game-changer for me. I've had recruiters reaching out weekly since working with The Ideal Professional. Worth every penny!"</p>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get in Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <h3>Let's Start Your Career Transformation</h3>
+          <p>Ready to take your professional life to the next level? Our team of career experts is here to help you achieve your goals. Fill out the form and we'll get back to you within 24 hours.</p>
+          <div class="contact-details">
+            <div>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>United Kingdom</span>
+            </div>
+            <div>
+              <i class="fas fa-phone"></i>
+              <span>+447435344535</span>
+            </div>
+            <div>
+              <i class="fas fa-envelope"></i>
+              <span>consultation@theidealprofessional.com</span>
+            </div>
+            <div>
+              <i class="fas fa-clock"></i>
+              <span>Mon-Fri: 9:00 AM - 6:00 PM</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form" action="mailto:theidealpro@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your Name" required/>
+          <input type="email" name="email" placeholder="Your Email" required/>
+          <input type="tel" name="phone" placeholder="Your Phone Number" />
+          <select name="service" required>
+            <option value="" disabled selected>Select a Service</option>
+            <option value="resume">Resume Writing & Optimization</option>
+            <option value="linkedin">LinkedIn Profile Enhancement</option>
+            <option value="interview">Interview Coaching</option>
+            <option value="branding">Personal Branding</option>
+            <option value="other">Other Services</option>
+          </select>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>The Ideal Professional</h3>
+          <p>Helping professionals stand out and succeed in their careers since 2020.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#">Resume Writing</a></li>
+            <li><a href="#">LinkedIn Optimization</a></li>
+            <li><a href="#">Interview Coaching</a></li>
+            <li><a href="#">Personal Branding</a></li>
+            <li><a href="#">Career Strategy</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> United Kingdom</li>
+            <li><i class="fas fa-phone"></i> +447435344535</li>
+            <li><i class="fas fa-envelope"></i> consultation@theidealprofessional.com</li>
+            <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 The Ideal Professional. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Banner -->
+  <div class="cookie-banner">
+    <div class="cookie-text">
+      <h4>We use cookies</h4>
+      <p>This website uses cookies to ensure you get the best experience on our website.</p>
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn settings">Cookie Settings</button>
+      <button class="cookie-btn accept">Accept All</button>
+    </div>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('nav ul').classList.toggle('active');
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+        // Close mobile menu if open
+        document.querySelector('nav ul').classList.remove('active');
+      });
+    });
+
+    // Show cookie banner after a delay
+    window.addEventListener('load', function() {
+      setTimeout(function() {
+        document.querySelector('.cookie-banner').style.display = 'flex';
+      }, 2000);
+    });
+
+    // Cookie banner buttons
+    document.querySelector('.cookie-btn.accept').addEventListener('click', function() {
+      document.querySelector('.cookie-banner').style.display = 'none';
+    });
+
+    document.querySelector('.cookie-btn.settings').addEventListener('click', function() {
+      // This would typically open cookie settings modal
+      alert('Cookie settings would open here');
+    });
+  </script>
+</body>
+</html>
