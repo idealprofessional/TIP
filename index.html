@@ -10,35 +10,44 @@
   <meta property="og:description" content="Elevate your career with our expert resume writing, LinkedIn optimization, and career coaching services.">
   <meta property="og:image" content="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.svg">
   <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <title>The Ideal Professional | Career Optimization Services</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.svg">
+  <link rel="icon" type="image/svg+xml" href="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.svg">
+  <link rel="apple-touch-icon" href="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.svg">
 
   <!-- Preload Critical Assets -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" media="print" onload="this.media='all'">
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy/No-referrer" media="print" onload="this.media='all'">
+
+  <!-- Polyfills for older browsers -->
+  <script>
+    // Picture element HTML5 shiv
+    document.createElement('picture');
+  </script>
 
   <style>
     :root {
-      --primary-color: #005B7F; /* Deep Blue for professionalism */
-      --primary-dark: #003F59; /* Darker Blue for gradients */
-      --secondary-color: #00A7B5; /* Teal for accents */
-      --text-color: #333333; /* Dark Gray for readability */
-      --text-light: #666666; /* Medium Gray for secondary text */
-      --bg-color: #F5F6F5; /* Light Gray for background */
-      --bg-light: #FFFFFF; /* White for cards and sections */
-      --accent-color: #E6F0FA; /* Light Blue for subtle highlights */
-      --error-color: #D32F2F; /* Red for errors */
-      --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.1);
-      --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.15);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --border-radius: 8px;
+      --primary-color: #0052cc; /* Vibrant blue inspired by Namecheap */
+      --primary-dark: #003d99; /* Darker blue for hover states */
+      --secondary-color: #00cc99; /* Bright teal for accents */
+      --text-color: #1a202c; /* Dark gray for readability */
+      --text-light: #4a5568; /* Lighter gray for secondary text */
+      --bg-color: #f7fafc; /* Light gray background */
+      --bg-light: #ffffff; /* White for cards and sections */
+      --accent-color: #e6f0ff; /* Light blue for highlights */
+      --error-color: #e53e3e; /* Red for errors */
+      --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+      --shadow-medium: 0 4px 16px rgba(0, 0, 0, 0.15);
+      --transition: all 0.3s ease-in-out;
+      --border-radius: 10px;
     }
 
     * {
@@ -46,10 +55,12 @@
       padding: 0;
       box-sizing: border-box;
       scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
-      font-family: 'Inter', Arial, sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.7;
       background-color: var(--bg-color);
       color: var(--text-color);
@@ -60,6 +71,7 @@
     img {
       max-width: 100%;
       height: auto;
+      display: block;
       transition: var(--transition);
     }
 
@@ -69,11 +81,16 @@
       transition: var(--transition);
     }
 
+    a:focus, button:focus, input:focus, select:focus, textarea:focus {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+
     .container {
       width: 90%;
-      max-width: 1400px;
+      max-width: 1440px;
       margin: auto;
-      padding: 0 clamp(10px, 5vw, 20px);
+      padding: 0 clamp(15px, 5vw, 25px);
     }
 
     /* Animations */
@@ -85,10 +102,12 @@
     .animate-on-scroll {
       opacity: 0;
       transform: translateY(20px);
-      transition: var(--transition);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     }
 
     .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
       animation: fadeInUp 0.8s ease-out forwards;
     }
 
@@ -96,11 +115,11 @@
     .top-bar {
       background-color: var(--bg-light);
       color: var(--text-light);
-      padding: clamp(8px, 2vw, 12px) 0;
+      padding: clamp(10px, 2vw, 15px) 0;
       font-size: clamp(0.85rem, 2vw, 0.95rem);
+      box-shadow: var(--shadow-light);
       position: relative;
       z-index: 1001;
-      box-shadow: var(--shadow-light);
     }
 
     .top-bar .container {
@@ -108,29 +127,29 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
     }
 
     .top-bar-left, .top-bar-right {
       display: flex;
-      gap: clamp(10px, 3vw, 15px);
+      gap: clamp(15px, 3vw, 20px);
       flex-wrap: wrap;
     }
 
     .top-bar a {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       transition: color 0.3s ease;
     }
 
-    .top-bar a:hover {
+    .top-bar a:hover, .top-bar a:focus {
       color: var(--primary-color);
     }
 
     header {
       background-color: var(--bg-light);
-      padding: clamp(10px, 2vw, 15px) 0;
+      padding: clamp(15px, 2vw, 20px) 0;
       box-shadow: var(--shadow-light);
       position: sticky;
       top: 0;
@@ -142,23 +161,23 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 15px;
     }
 
     .logo img {
-      height: clamp(40px, 8vw, 50px);
+      height: clamp(45px, 8vw, 55px);
       width: auto;
       transition: transform 0.3s ease;
     }
 
-    .logo img:hover {
+    .logo img:hover, .logo img:focus {
       transform: scale(1.05);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: clamp(15px, 3vw, 25px);
+      gap: clamp(20px, 3vw, 30px);
       margin: 0;
       padding: 0;
       align-items: center;
@@ -170,13 +189,15 @@
       font-weight: 600;
       text-transform: uppercase;
       font-size: clamp(0.9rem, 2vw, 1rem);
-      padding: 8px 12px;
+      padding: 10px 15px;
       display: block;
-      transition: color 0.3s ease;
+      transition: color 0.3s ease, background-color 0.3s ease;
     }
 
-    nav ul li a:hover {
+    nav ul li a:hover, nav ul li a:focus {
       color: var(--primary-color);
+      background-color: var(--accent-color);
+      border-radius: var(--border-radius);
     }
 
     .mobile-menu-btn {
@@ -187,12 +208,13 @@
       color: var(--text-color);
       cursor: pointer;
       z-index: 1002;
+      padding: 10px;
     }
 
     .header-btn {
-      background: var(--primary-color);
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
       color: var(--bg-light);
-      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+      padding: clamp(10px, 2vw, 12px) clamp(20px, 3vw, 25px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
@@ -200,11 +222,11 @@
       box-shadow: var(--shadow-light);
       font-size: clamp(0.9rem, 2vw, 1rem);
       text-align: center;
-      min-width: 120px;
+      min-width: 140px;
       transition: var(--transition);
     }
 
-    .header-btn:hover {
+    .header-btn:hover, .header-btn:focus {
       background: var(--primary-dark);
       transform: translateY(-2px);
       box-shadow: var(--shadow-medium);
@@ -212,12 +234,15 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      background: linear-gradient(135deg, rgba(0, 82, 204, 0.8), rgba(0, 204, 153, 0.8)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
       color: var(--bg-light);
       text-align: center;
-      padding: clamp(100px, 15vh, 160px) 20px;
+      padding: clamp(120px, 15vh, 180px) 20px;
       position: relative;
-      min-height: 70vh;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero .container {
@@ -227,38 +252,38 @@
 
     .hero h1 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(2rem, 6vw, 4rem);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
       font-weight: 700;
-      margin-bottom: 25px;
-      animation: fadeInUp 1s ease-out;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .hero p {
-      font-size: clamp(1.1rem, 3vw, 1.5rem);
-      margin-bottom: 40px;
-      max-width: 800px;
+      font-size: clamp(1.2rem, 3vw, 1.6rem);
+      margin-bottom: 50px;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
-      animation: fadeInUp 1.2s ease-out;
+      line-height: 1.8;
     }
 
     .btn {
-      background: var(--primary-color);
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
       color: var(--bg-light);
-      padding: clamp(10px, 3vw, 14px) clamp(25px, 5vw, 35px);
+      padding: clamp(12px, 3vw, 16px) clamp(30px, 5vw, 40px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       text-transform: uppercase;
       box-shadow: var(--shadow-light);
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
       display: inline-block;
-      min-width: 150px;
+      min-width: 160px;
       text-align: center;
       transition: var(--transition);
     }
 
-    .btn:hover {
+    .btn:hover, .btn:focus {
       background: var(--primary-dark);
       transform: translateY(-2px);
       box-shadow: var(--shadow-medium);
@@ -266,20 +291,20 @@
 
     .btn.secondary {
       background: transparent;
-      border: 2px solid var(--primary-color);
-      color: var(--primary-color);
-      margin-left: clamp(10px, 2vw, 15px);
+      border: 2px solid var(--bg-light);
+      color: var(--bg-light);
+      margin-left: clamp(15px, 2vw, 20px);
     }
 
-    .btn.secondary:hover {
-      background: var(--primary-color);
-      color: var(--bg-light);
-      border-color: transparent;
+    .btn.secondary:hover, .btn.secondary:focus {
+      background: var(--bg-light);
+      color: var(--primary-color);
+      border-color: var(--bg-light);
     }
 
     /* Sections */
     section {
-      padding: clamp(60px, 10vh, 100px) 0;
+      padding: clamp(80px, 10vh, 120px) 0;
       position: relative;
       min-height: 50vh;
     }
@@ -287,9 +312,9 @@
     .section-title {
       text-align: center;
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
       font-weight: 700;
-      margin-bottom: 50px;
+      margin-bottom: 60px;
       color: var(--text-color);
       position: relative;
     }
@@ -297,115 +322,108 @@
     .section-title::after {
       content: '';
       position: absolute;
-      bottom: -10px;
+      bottom: -12px;
       left: 50%;
       transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
+      width: 120px;
+      height: 5px;
       background: var(--primary-color);
-      border-radius: 2px;
+      border-radius: 3px;
     }
 
     .section-intro, .section-outro {
       text-align: center;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      max-width: 900px;
+      margin: 0 auto 50px;
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
       color: var(--text-light);
+      line-height: 1.8;
     }
 
     /* Features Section */
     .features {
-      display: flex;
-      justify-content: center;
-      gap: clamp(15px, 3vw, 25px);
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: clamp(20px, 3vw, 30px);
     }
 
     .feature {
       background-color: var(--bg-light);
-      padding: clamp(15px, 3vw, 25px);
+      padding: clamp(20px, 3vw, 30px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       text-align: center;
       transition: var(--transition);
-      flex: 1;
-      min-width: clamp(250px, 45vw, 300px);
-      max-width: 350px;
     }
 
-    .feature:hover {
+    .feature:hover, .feature:focus {
       transform: translateY(-5px);
       box-shadow: var(--shadow-medium);
     }
 
     .feature i {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       color: var(--primary-color);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .feature h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.3rem, 3vw, 1.5rem);
-      margin-bottom: 10px;
+      font-size: clamp(1.4rem, 3vw, 1.6rem);
+      margin-bottom: 15px;
     }
 
     /* About Section */
     #about {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1516321310764-8a238815b3f8?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 82, 204, 0.9), rgba(0, 204, 153, 0.9)), url('https://images.unsplash.com/photo-1516321310764-8a238815b3f8?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
       color: var(--bg-light);
     }
 
     #about p {
-      max-width: 700px;
-      margin: 15px auto;
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      max-width: 800px;
+      margin: 20px auto;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      line-height: 1.8;
     }
 
     /* Services Section */
     .services {
-      display: flex;
-      justify-content: center;
-      gap: clamp(15px, 3vw, 25px);
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: clamp(20px, 3vw, 30px);
     }
 
     .service {
       background-color: var(--bg-light);
-      padding: clamp(20px, 4vw, 30px);
+      padding: clamp(25px, 4vw, 35px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       text-align: center;
       transition: var(--transition);
-      flex: 1;
-      min-width: clamp(240px, 45vw, 280px);
-      max-width: 320px;
     }
 
-    .service:hover {
+    .service:hover, .service:focus {
       transform: translateY(-5px);
       box-shadow: var(--shadow-medium);
     }
 
     .service i {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       color: var(--primary-color);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .service h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.4rem, 3vw, 1.6rem);
-      margin-bottom: 10px;
+      font-size: clamp(1.5rem, 3vw, 1.7rem);
+      margin-bottom: 15px;
     }
 
     /* What We Offer Section */
     .service-cards {
-      display: flex;
-      justify-content: center;
-      gap: clamp(15px, 3vw, 25px);
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: clamp(20px, 3vw, 30px);
     }
 
     .service-card {
@@ -414,41 +432,38 @@
       overflow: hidden;
       box-shadow: var(--shadow-light);
       transition: var(--transition);
-      flex: 1;
-      min-width: clamp(260px, 45vw, 300px);
-      max-width: 340px;
     }
 
-    .service-card:hover {
+    .service-card:hover, .service-card:focus {
       transform: translateY(-5px);
       box-shadow: var(--shadow-medium);
     }
 
     .service-image {
       width: 100%;
-      height: clamp(160px, 25vw, 200px);
+      height: clamp(180px, 25vw, 220px);
       object-fit: cover;
       transition: transform 0.5s ease;
     }
 
-    .service-card:hover .service-image {
-      transform: scale(1.03);
+    .service-card:hover .service-image, .service-card:focus .service-image {
+      transform: scale(1.05);
     }
 
     .service-info {
-      padding: clamp(15px, 3vw, 20px);
+      padding: clamp(20px, 3vw, 25px);
     }
 
     .service-info h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.2rem, 3vw, 1.4rem);
-      margin-bottom: 10px;
+      font-size: clamp(1.3rem, 3vw, 1.5rem);
+      margin-bottom: 15px;
     }
 
     .service-btn {
-      background: var(--primary-color);
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
       color: var(--bg-light);
-      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+      padding: clamp(10px, 2vw, 12px) clamp(20px, 3vw, 25px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
@@ -457,7 +472,7 @@
       transition: var(--transition);
     }
 
-    .service-btn:hover {
+    .service-btn:hover, .service-btn:focus {
       background: var(--primary-dark);
       transform: translateY(-2px);
       box-shadow: var(--shadow-medium);
@@ -465,98 +480,87 @@
 
     /* Who We Serve Section */
     .client-types {
-      display: flex;
-      justify-content: center;
-      gap: clamp(15px, 3vw, 25px);
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(20px, 3vw, 30px);
     }
 
     .client-type {
       background-color: var(--bg-light);
-      padding: clamp(15px, 3vw, 25px);
+      padding: clamp(20px, 3vw, 30px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       text-align: center;
       transition: var(--transition);
-      flex: 1;
-      min-width: clamp(220px, 45vw, 260px);
-      max-width: 280px;
     }
 
-    .client-type:hover {
+    .client-type:hover, .client-type:focus {
       transform: translateY(-5px);
       box-shadow: var(--shadow-medium);
     }
 
     .client-type i {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       color: var(--primary-color);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .client-type h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.2rem, 3vw, 1.4rem);
-      margin-bottom: 10px;
+      font-size: clamp(1.3rem, 3vw, 1.5rem);
+      margin-bottom: 15px;
     }
 
     /* Why Choose Us Section */
     .reasons {
-      display: flex;
-      justify-content: center;
-      gap: clamp(15px, 3vw, 25px);
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: clamp(20px, 3vw, 30px);
     }
 
     .reason {
       background-color: var(--bg-light);
-      padding: clamp(15px, 3vw, 25px);
+      padding: clamp(20px, 3vw, 30px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       text-align: center;
       transition: var(--transition);
-      flex: 1;
-      min-width: clamp(240px, 45vw, 280px);
-      max-width: 300px;
     }
 
-    .reason:hover {
+    .reason:hover, .reason:focus {
       transform: translateY(-5px);
       box-shadow: var(--shadow-medium);
     }
 
     .reason i {
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
       color: var(--primary-color);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .reason h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.2rem, 3vw, 1.4rem);
-      margin-bottom: 10px;
+      font-size: clamp(1.3rem, 3vw, 1.5rem);
+      margin-bottom: 15px;
     }
 
     /* Testimonials Section */
     .testimonials {
-      display: flex;
-      justify-content: center;
-      gap: clamp(15px, 3vw, 25px);
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: clamp(20px, 3vw, 30px);
     }
 
     .testimonial {
       background-color: var(--bg-light);
-      padding: clamp(15px, 3vw, 25px);
+      padding: clamp(20px, 3vw, 30px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       transition: var(--transition);
-      flex: 1;
-      min-width: clamp(260px, 45vw, 300px);
-      max-width: 340px;
+      position: relative;
     }
 
-    .testimonial:hover {
+    .testimonial:hover, .testimonial:focus {
       transform: translateY(-5px);
       box-shadow: var(--shadow-medium);
     }
@@ -564,9 +568,9 @@
     .testimonial:before {
       content: '\201C';
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(3rem, 8vw, 5rem);
+      font-size: clamp(4rem, 8vw, 6rem);
       color: var(--primary-color);
-      opacity: 0.15;
+      opacity: 0.1;
       position: absolute;
       top: 10px;
       left: 15px;
@@ -575,109 +579,116 @@
     .testimonial-header {
       display: flex;
       align-items: center;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .testimonial-image {
-      width: clamp(40px, 10vw, 50px);
-      height: clamp(40px, 10vw, 50px);
+      width: clamp(50px, 10vw, 60px);
+      height: clamp(50px, 10vw, 60px);
       border-radius: 50%;
       object-fit: cover;
-      margin-right: 10px;
+      margin-right: 15px;
       border: 2px solid var(--primary-color);
     }
 
     .testimonial-info h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
       margin-bottom: 5px;
     }
 
     .testimonial-info p {
       color: var(--text-light);
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      font-size: clamp(0.85rem, 2vw, 0.95rem);
     }
 
     .testimonial p {
       font-style: italic;
       color: var(--text-light);
-      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      line-height: 1.6;
     }
 
     .testimonial-rating {
-      color: #FFB300;
-      margin-top: 10px;
+      color: #f6ad55;
+      margin-top: 15px;
     }
 
     /* CTA Section */
     .cta {
-      background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1951&q=80') center/cover no-repeat;
+      background: linear-gradient(rgba(0, 82, 204, 0.9), rgba(0, 204, 153, 0.9)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1951&q=80') center/cover no-repeat;
       color: var(--bg-light);
       text-align: center;
-      padding: clamp(80px, 12vh, 120px) 20px;
+      padding: clamp(100px, 12vh, 140px) 20px;
       position: relative;
-      min-height: 50vh;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .cta h2 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      margin-bottom: 25px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 30px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .cta p {
-      font-size: clamp(1rem, 2.5vw, 1.3rem);
-      margin-bottom: 35px;
-      max-width: 700px;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      margin-bottom: 40px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.8;
     }
 
     /* Contact Section */
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: clamp(20px, 4vw, 40px);
+      gap: clamp(30px, 4vw, 50px);
       align-items: start;
     }
 
     .contact-info h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.6rem, 3vw, 2rem);
-      margin-bottom: 15px;
+      font-size: clamp(1.8rem, 3vw, 2.2rem);
+      margin-bottom: 20px;
       color: var(--primary-color);
     }
 
     .contact-info p {
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: var(--text-light);
-      margin-bottom: 25px;
+      margin-bottom: 30px;
+      line-height: 1.8;
     }
 
     .contact-details div {
       display: flex;
       align-items: center;
-      margin-bottom: 15px;
-      font-size: clamp(0.9rem, lãnh vực, 1rem);
+      margin-bottom: 20px;
+      font-size: clamp(0.95rem, 2vw, 1.1rem);
     }
 
     .contact-details i {
       color: var(--primary-color);
-      font-size: clamp(1.2rem, 3vw, 1.4rem);
-      margin-right: 10px;
-      width: 20px;
+      font-size: clamp(1.3rem, 3vw, 1.5rem);
+      margin-right: 15px;
+      width: 25px;
     }
 
     .contact-form {
       background-color: var(--bg-light);
-      padding: clamp(20px, 4vw, 30px);
+      padding: clamp(25px, 4vw, 35px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       font-family: 'Inter', sans-serif;
     }
 
     .contact-form .form-group {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       position: relative;
     }
 
@@ -685,38 +696,39 @@
     .contact-form select,
     .contact-form textarea {
       width: 100%;
-      padding: clamp(10px, 2vw, 12px);
-      border: 1px solid #DDDDDD;
+      padding: clamp(12px, 2vw, 14px);
+      border: 1px solid #e2e8f0;
       border-radius: var(--border-radius);
-      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
       background-color: var(--bg-light);
       color: var(--text-color);
-      transition: border-color 0.3s ease;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     .contact-form input:focus,
     .contact-form select:focus,
     .contact-form textarea:focus {
       border-color: var(--primary-color);
-      outline: none;
+      box-shadow: 0 0 0 3px var(--accent-color);
     }
 
     .contact-form select {
       appearance: none;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%231a202c' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 12px center;
+      background-position: right 15px center;
+      padding-right: 40px;
     }
 
     .contact-form textarea {
       resize: vertical;
-      min-height: clamp(100px, 15vh, 120px);
+      min-height: clamp(120px, 15vh, 140px);
     }
 
     .contact-form button {
       width: 100%;
-      padding: clamp(10px, 2vw, 12px);
-      background: var(--primary-color);
+      padding: clamp(12px, 2vw, 14px);
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
       color: var(--bg-light);
       border: none;
       border-radius: var(--border-radius);
@@ -725,11 +737,11 @@
       text-transform: uppercase;
       cursor: pointer;
       box-shadow: var(--shadow-light);
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
       transition: var(--transition);
     }
 
-    .contact-form button:hover {
+    .contact-form button:hover, .contact-form button:focus {
       background: var(--primary-dark);
       transform: translateY(-2px);
       box-shadow: var(--shadow-medium);
@@ -737,23 +749,24 @@
 
     .contact-form .mailto-btn,
     .contact-form .copy-btn {
-      margin-top: 10px;
+      margin-top: 15px;
     }
 
     .contact-form .mailto-instructions {
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      font-size: clamp(0.85rem, 2vw, 0.95rem);
       color: var(--text-light);
-      margin: 10px 0;
+      margin: 15px 0;
       text-align: center;
+      line-height: 1.6;
     }
 
     .contact-form .error-message {
       color: var(--error-color);
-      font-size: clamp(0.75rem, 2vw, 0.85rem);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
       margin-top: 5px;
       display: none;
       position: absolute;
-      bottom: -18px;
+      bottom: -20px;
       left: 0;
     }
 
@@ -767,12 +780,12 @@
 
     .contact-form .form-success {
       background-color: var(--accent-color);
-      padding: clamp(10px, 2vw, 15px);
+      padding: clamp(12px, 2vw, 18px);
       border-radius: var(--border-radius);
       text-align: center;
       color: var(--primary-color);
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
-      margin-top: 15px;
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      margin-top: 20px;
       display: none;
     }
 
@@ -781,8 +794,8 @@
     }
 
     .contact-form .fallback-link {
-      margin-top: 15px;
-      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+      margin-top: 20px;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
       color: var(--text-light);
       text-align: center;
     }
@@ -792,7 +805,7 @@
       text-decoration: underline;
     }
 
-    .contact-form .fallback-link a:hover {
+    .contact-form .fallback-link a:hover, .contact-form .fallback-link a:focus {
       color: var(--primary-dark);
     }
 
@@ -800,39 +813,35 @@
     footer {
       background-color: var(--bg-light);
       color: var(--text-light);
-      padding: clamp(50px, 8vh, 70px) 0 25px;
-      position: relative;
-      box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
+      padding: clamp(60px, 8vh, 80px) 0 30px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     }
 
     .footer-content {
-      display: flex;
-      justify-content: center;
-      gap: clamp(15px, 4vw, 30px);
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: clamp(20px, 4vw, 40px);
     }
 
     .footer-column {
-      flex: 1;
-      min-width: clamp(200px, 45vw, 240px);
-      max-width: 280px;
+      min-width: clamp(200px, 45vw, 260px);
     }
 
     .footer-column h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      font-size: clamp(1.3rem, 3vw, 1.5rem);
       color: var(--text-color);
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       position: relative;
     }
 
     .footer-column h3::after {
       content: '';
       position: absolute;
-      bottom: -6px;
+      bottom: -8px;
       left: 0;
-      width: 40px;
-      height: 3px;
+      width: 50px;
+      height: 4px;
       background: var(--primary-color);
     }
 
@@ -841,24 +850,24 @@
     }
 
     .footer-column ul li {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
-    .footer-column ul li a:hover {
+    .footer-column ul li a:hover, .footer-column ul li a:focus {
       color: var(--primary-color);
     }
 
     .social-links {
       display: flex;
-      gap: 10px;
-      margin-top: 15px;
+      gap: 15px;
+      margin-top: 20px;
     }
 
     .social-links a {
       color: var(--text-color);
       background: var(--accent-color);
-      width: clamp(35px, 7vw, 40px);
-      height: clamp(35px, 7vw, 40px);
+      width: clamp(40px, 7vw, 45px);
+      height: clamp(40px, 7vw, 45px);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -866,7 +875,7 @@
       transition: var(--transition);
     }
 
-    .social-links a:hover {
+    .social-links a:hover, .social-links a:focus {
       background: var(--primary-color);
       color: var(--bg-light);
       transform: translateY(-2px);
@@ -874,28 +883,20 @@
 
     .footer-bottom {
       text-align: center;
-      margin-top: 30px;
-      border-top: 1px solid #DDDDDD;
-      padding-top: 15px;
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      margin-top: 40px;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 20px;
+      font-size: clamp(0.85rem, 2vw, 0.95rem);
     }
 
     /* Cookie Banner */
     .cookie-banner {
       position: fixed;
-      bottom: 15px;
-      left: 15px;
-      right: 15px;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
       background-color: var(--bg-light);
-      padding: clamp(10px, 2vw, 15px);
-      border-radius: var(--border-radius);
-    .cookie-banner {
-      position: fixed;
-      bottom: 15px;
-      left: 15px;
-      right: 15px;
-      background-color: var(--bg-light);
-      padding: clamp(10px, 2vw, 15px);
+      padding: clamp(15px, 2vw, 20px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       display: flex;
@@ -903,37 +904,41 @@
       align-items: center;
       z-index: 1000;
       display: none;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     .cookie-text h4 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
       color: var(--text-color);
-      margin-bottom: 5px;
+      margin-bottom: 8px;
     }
 
     .cookie-text p {
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      font-size: clamp(0.85rem, 2vw, 0.95rem);
       color: var(--text-light);
+      line-height: 1.6;
     }
 
     .cookie-buttons {
       display: flex;
-      gap: 10px;
+      gap: 15px;
       flex-wrap: wrap;
     }
 
     .cookie-btn {
-      padding: clamp(6px, 2vw, 8px) clamp(12px, 3vw, 15px);
+      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      font-size: clamp(0.85rem, 2vw, 0.95rem);
       cursor: pointer;
+      transition: var(--transition);
     }
 
     .cookie-btn.accept {
-      background: var(--primary-color);
+      background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
       color: var(--bg-light);
       border: none;
     }
@@ -942,6 +947,11 @@
       background: transparent;
       border: 2px solid var(--text-light);
       color: var(--text-light);
+    }
+
+    .cookie-btn:hover, .cookie-btn:focus {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-light);
     }
 
     /* Responsive Design */
@@ -955,27 +965,21 @@
       .contact-info {
         order: 2;
       }
-      .features, .services, .service-cards, .client-types, .reasons, .testimonials, .footer-content {
-        flex-wrap: wrap;
-      }
-      .feature, .service, .service-card, .client-type, .reason, .testimonial, .footer-column {
-        max-width: 100%;
-      }
     }
 
     @media (max-width: 992px) {
       .hero h1 {
-        font-size: clamp(1.8rem, 5vw, 3rem);
+        font-size: clamp(2rem, 5vw, 3.5rem);
       }
       .hero p {
-        font-size: clamp(1rem, 3vw, 1.3rem);
+        font-size: clamp(1.1rem, 3vw, 1.4rem);
       }
       .section-title {
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        font-size: clamp(2rem, 4vw, 3rem);
       }
       .top-bar .container {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         align-items: center;
       }
     }
@@ -995,7 +999,7 @@
         height: 100vh;
         background-color: var(--bg-light);
         flex-direction: column;
-        padding: clamp(80px, 15vh, 100px) 20px;
+        padding: clamp(100px, 15vh, 120px) 20px;
         transform: translateX(100%);
         transition: transform 0.3s ease;
         z-index: 1001;
@@ -1007,34 +1011,34 @@
         transform: translateX(0);
       }
       nav ul li {
-        margin: 15px 0;
+        margin: 20px 0;
         width: 100%;
         text-align: center;
       }
       nav ul li a {
-        font-size: clamp(1.2rem, 3vw, 1.4rem);
-        padding: 12px;
+        font-size: clamp(1.3rem, 3vw, 1.5rem);
+        padding: 15px;
       }
       .header-btn {
-        margin: 15px 0;
+        margin: 20px 0;
         width: 100%;
-        max-width: 250px;
+        max-width: 300px;
       }
       .hero {
-        padding: clamp(80px, 12vh, 120px) 15px;
-        min-height: 60vh;
+        padding: clamp(100px, 12vh, 140px) 15px;
+        min-height: 70vh;
       }
       .hero h1 {
-        font-size: clamp(1.6rem, 5vw, 2.5rem);
+        font-size: clamp(1.8rem, 5vw, 3rem);
       }
       .cookie-banner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 15px;
       }
       .btn.secondary {
         margin-left: 0;
-        margin-top: 10px;
+        margin-top: 15px;
       }
       body.menu-open {
         overflow: hidden;
@@ -1046,65 +1050,83 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(0, 0, 0, 0.6);
         z-index: 1000;
       }
     }
 
     @media (max-width: 576px) {
       .hero h1 {
-        font-size: clamp(1.4rem, 5vw, 2rem);
+        font-size: clamp(1.6rem, 5vw, 2.5rem);
       }
       .hero p {
-        font-size: clamp(0.9rem, 3vw, 1.1rem);
+        font-size: clamp(1rem, 3vw, 1.2rem);
       }
       .btn {
-        padding: clamp(8px, 3vw, 10px) clamp(15px, 5vw, 25px);
-        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-        min-width: 120px;
+        padding: clamp(10px, 3vw, 12px) clamp(20px, 5vw, 30px);
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
+        min-width: 140px;
       }
       .section-title {
-        font-size: clamp(1.6rem, 4vw, 2rem);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
       }
       .contact-form {
-        padding: clamp(15px, 3vw, 20px);
+        padding: clamp(20px, 3vw, 25px);
       }
       .service-card .service-image {
-        height: clamp(140px, 20vw, 160px);
+        height: clamp(160px, 20vw, 180px);
       }
       .contact-form .error-message {
-        font-size: clamp(0.7rem, 2vw, 0.8rem);
-        bottom: -16px;
+        font-size: clamp(0.75rem, 2vw, 0.85rem);
+        bottom: -18px;
       }
       .top-bar-left, .top-bar-right {
         flex-direction: column;
-        gap: 8px;
+        gap: 10px;
         align-items: center;
       }
       .contact-details div {
         flex-direction: column;
         align-items: flex-start;
-        gap: 5px;
-      }
-      .feature, .service, .service-card, .client-type, .reason, .testimonial {
-        min-width: 100%;
+        gap: 8px;
       }
     }
 
     @media (max-width: 400px) {
       .logo img {
-        height: clamp(30px, 7vw, 40px);
+        height: clamp(35px, 7vw, 45px);
       }
       .mobile-menu-btn {
-        font-size: clamp(1.2rem, 4vw, 1.5rem);
+        font-size: clamp(1.3rem, 4vw, 1.6rem);
       }
       .header-btn {
-        padding: clamp(6px, 2vw, 8px) clamp(10px, 3vw, 15px);
-        font-size: clamp(0.85rem, 2vw, 0.95rem);
-        min-width: 100px;
+        padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        min-width: 120px;
       }
       .section-title::after {
-        width: 80px;
+        width: 100px;
+      }
+    }
+
+    /* High contrast mode */
+    @media (prefers-contrast: high) {
+      :root {
+        --primary-color: #003087;
+        --text-color: #000000;
+        --bg-light: #ffffff;
+        --text-light: #333333;
+      }
+      a, button {
+        text-decoration: underline;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .animate-on-scroll, .btn, .feature, .service, .service-card, .client-type, .reason, .testimonial, .header-btn, .service-btn, .social-links a {
+        transition: none;
+        animation: none;
       }
     }
   </style>
@@ -1114,11 +1136,11 @@
   <div class="top-bar">
     <div class="container">
       <div class="top-bar-left">
-        <a href="#"><i class="fas fa-map-marker-alt"></i> London & Birmingham, UK</a>
-        <a href="tel:+447435344535"><i class="fas fa-phone"></i> +44 7435 344535</a>
+        <a href="#" aria-label="Our location in London and Birmingham, UK"><i class="fas fa-map-marker-alt"></i> London & Birmingham, UK</a>
+        <a href="tel:+447435344535" aria-label="Call us at +44 7435 344535"><i class="fas fa-phone"></i> +44 7435 344535</a>
       </div>
       <div class="top-bar-right">
-        <a href="mailto:consultation@theidealprofessional.com"><i class="fas fa-envelope"></i> consultation@theidealprofessional.com</a>
+        <a href="mailto:consultation@theidealprofessional.com" aria-label="Email us at consultation@theidealprofessional.com"><i class="fas fa-envelope"></i> consultation@theidealprofessional.com</a>
       </div>
     </div>
   </div>
@@ -1128,8 +1150,11 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <a href="#">
-            <img src="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.svg" alt="The Ideal Professional Logo">
+          <a href="#" aria-label="The Ideal Professional Home">
+            <picture>
+              <source srcset="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.webp" type="image/webp">
+              <img src="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.svg" alt="The Ideal Professional Logo">
+            </picture>
           </a>
         </div>
         <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -1151,9 +1176,9 @@
   <section class="hero">
     <div class="container">
       <h1>Stand Out. Get Noticed. Land Your Dream Job.</h1>
-      <p>We optimize your resume, LinkedIn, and career visibility to fast-track your success.</p>
+      <p>Elevate your career with our expert resume writing, LinkedIn optimization, and career coaching services designed to fast-track your success.</p>
       <a href="#contact" class="btn">Get Started Today</a>
-      <a href="#services" class="btn secondary">Learn More</a>
+      <a href="#services" class="btn secondary">Explore Services</a>
     </div>
   </section>
 
@@ -1169,7 +1194,7 @@
         <div class="feature animate-on-scroll">
           <i class="fas fa-file-alt"></i>
           <h3>ATS-Optimized Resumes</h3>
-          <p>Get past the automated screening systems and into the hands of hiring managers with our expert resume services.</p>
+          <p>Get past automated screening systems and into the hands of hiring managers with our expert resume services.</p>
         </div>
         <div class="feature animate-on-scroll">
           <i class="fas fa-handshake"></i>
@@ -1184,10 +1209,10 @@
   <section id="about">
     <div class="container">
       <h2 class="section-title animate-on-scroll">Who We Are</h2>
-      <p class="animate-on-scroll">At The Ideal Professional, we believe that every individual is a brand with the potential to stand out in the competitive labor market. Our mission is to equip professionals with the right tools, strategies, and confidence to secure career opportunities and thrive in their chosen fields.</p>
-      <p class="animate-on-scroll">Whether you're starting a new career, transitioning into a new role, or seeking to elevate your professional presence, we provide expert services designed to help you get noticed by recruiters and hiring managers.</p>
-      <p class="animate-on-scroll">The Ideal Professional is more than just a career service—it's a personal branding and career acceleration platform designed to help professionals gain visibility in the labor market, strategically position themselves for success, and navigate their career journey with confidence.</p>
-      <p class="animate-on-scroll">We don't just tell you what you need; we equip, empower, and guide you step by step to becoming the professional you aspire to be.</p>
+      <p class="animate-on-scroll">At The Ideal Professional, we believe every individual is a brand with the potential to stand out in the competitive labor market. Our mission is to equip professionals with the tools, strategies, and confidence to secure career opportunities and thrive.</p>
+      <p class="animate-on-scroll">Whether you're starting a new career, transitioning to a new role, or aiming to elevate your professional presence, our expert services are designed to help you get noticed by recruiters and hiring managers.</p>
+      <p class="animate-on-scroll">The Ideal Professional is more than a career service—it's a personal branding and career acceleration platform that strategically positions you for success and guides you with confidence.</p>
+      <p class="animate-on-scroll">We empower you step by step to become the professional you aspire to be.</p>
     </div>
   </section>
 
@@ -1226,26 +1251,35 @@
       <h2 class="section-title animate-on-scroll">What We Offer</h2>
       <div class="service-cards">
         <div class="service-card animate-on-scroll">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=60" alt="Career Visibility" loading="lazy">
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=60&fm=webp" type="image/webp">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=60" alt="Career Visibility" loading="lazy" class="service-image">
+          </picture>
           <div class="service-info">
             <h3>Career Visibility & Personal Branding</h3>
-            <p>We position you as a top candidate in your industry by optimizing your resume, LinkedIn, and overall professional presence.</p>
+            <p>We position you as a top candidate by optimizing your resume, LinkedIn, and overall professional presence.</p>
             <a href="#contact" class="service-btn">Learn More</a>
           </div>
         </div>
         <div class="service-card animate-on-scroll">
-          <img src="https://images.unsplash.com/photo-1573496130141-209d200cebd8?auto=format&fit=crop&w=500&q=60" alt="Strategic Career Guidance" loading="lazy">
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1573496130141-209d200cebd8?auto=format&fit=crop&w=500&q=60&fm=webp" type="image/webp">
+            <img src="https://images.unsplash.com/photo-1573496130141-209d200cebd8?auto=format&fit=crop&w=500&q=60" alt="Strategic Career Guidance" loading="lazy" class="service-image">
+          </picture>
           <div class="service-info">
             <h3>Strategic Career Guidance</h3>
-            <p>From career pivots to executive advancement, we provide tailored strategies for job search, networking, and career growth.</p>
+            <p>From career pivots to executive advancement, we provide tailored strategies for job search, networking, and growth.</p>
             <a href="#contact" class="service-btn">Learn More</a>
           </div>
         </div>
         <div class="service-card animate-on-scroll">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=60" alt="End-to-End Support" loading="lazy">
+          <picture>
+            <source srcset="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=60&fm=webp" type="image/webp">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=60" alt="End-to-End Support" loading="lazy" class="service-image">
+          </picture>
           <div class="service-info">
             <h3>End-to-End Support</h3>
-            <p>We work closely with you, offering resume writing, LinkedIn optimization, interview coaching, and job search mentorship.</p>
+            <p>We offer resume writing, LinkedIn optimization, interview coaching, and job search mentorship.</p>
             <a href="#contact" class="service-btn">Learn More</a>
           </div>
         </div>
@@ -1285,7 +1319,7 @@
           <p>Refining executive presence for C-suite opportunities.</p>
         </div>
       </div>
-      <p class="section-outro animate-on-scroll">Whether you're a fresh graduate seeking direction, a professional exploring new paths, or someone with a passion but unclear career direction, we help shape and amplify your unique professional story.</p>
+      <p class="section-outro animate-on-scroll">Whether you're a fresh graduate, a professional exploring new paths, or someone with a passion but unclear career direction, we amplify your unique professional story.</p>
     </div>
   </section>
 
@@ -1297,17 +1331,17 @@
         <div class="reason animate-on-scroll">
           <i class="fas fa-chart-bar"></i>
           <h3>Market-Driven Strategies</h3>
-          <p>We stay ahead of recruitment trends, ATS algorithms, and hiring patterns to ensure our clients stand out.</p>
+          <p>We stay ahead of recruitment trends, ATS algorithms, and hiring patterns to ensure you stand out.</p>
         </div>
         <div class="reason animate-on-scroll">
           <i class="fas fa-route"></i>
           <h3>Personalized Roadmaps</h3>
-          <p>No one-size-fits-all approach—every career path is unique, and we tailor our services to individual goals.</p>
+          <p>No one-size-fits-all approach—every career path is unique, and we tailor our services to your goals.</p>
         </div>
         <div class="reason animate-on-scroll">
           <i class="fas fa-trophy"></i>
           <h3>Proven Success Stories</h3>
-          <p>Our clients experience increased interview callbacks, stronger professional networks, and faster career progression.</p>
+          <p>Our clients experience increased interview callbacks, stronger networks, and faster career progression.</p>
         </div>
         <div class="reason animate-on-scroll">
           <i class="fas fa-rocket"></i>
@@ -1334,13 +1368,16 @@
       <div class="testimonials">
         <div class="testimonial animate-on-scroll">
           <div class="testimonial-header">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="testimonial-image" loading="lazy">
+            <picture>
+              <source srcset="https://randomuser.me/api/portraits/men/32.jpg?fm=webp" type="image/webp">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="testimonial-image" loading="lazy">
+            </picture>
             <div class="testimonial-info">
               <h3>John Doe</h3>
               <p>Marketing Director</p>
             </div>
           </div>
-          <p>"Thanks to The Ideal Professional, I landed my dream job within weeks! Their resume optimization service completely transformed my application and gave me the confidence I needed."</p>
+          <p>"Thanks to The Ideal Professional, I landed my dream job within weeks! Their resume optimization service transformed my application and boosted my confidence."</p>
           <div class="testimonial-rating">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -1351,13 +1388,16 @@
         </div>
         <div class="testimonial animate-on-scroll">
           <div class="testimonial-header">
-            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="testimonial-image" loading="lazy">
+            <picture>
+              <source srcset="https://randomuser.me/api/portraits/women/44.jpg?fm=webp" type="image/webp">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="testimonial-image" loading="lazy">
+            </picture>
             <div class="testimonial-info">
               <h3>Jane Smith</h3>
               <p>Software Engineer</p>
             </div>
           </div>
-          <p>"Their resume optimization service is top-notch. After working with The Ideal Professional team, I received three interview calls in the first week. Highly recommended!"</p>
+          <p>"Their resume optimization service is top-notch. After working with The Ideal Professional, I received three interview calls in the first week. Highly recommended!"</p>
           <div class="testimonial-rating">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -1368,13 +1408,16 @@
         </div>
         <div class="testimonial animate-on-scroll">
           <div class="testimonial-header">
-            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Johnson" class="testimonial-image" loading="lazy">
+            <picture>
+              <source srcset="https://randomuser.me/api/portraits/men/67.jpg?fm=webp" type="image/webp">
+              <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Johnson" class="testimonial-image" loading="lazy">
+            </picture>
             <div class="testimonial-info">
               <h3>Michael Johnson</h3>
               <p>Financial Analyst</p>
             </div>
           </div>
-          <p>"The LinkedIn profile makeover was a game-changer for me. I've had recruiters reaching out weekly since working with The Ideal Professional."</p>
+          <p>"The LinkedIn profile makeover was a game-changer. I've had recruiters reaching out weekly since working with The Ideal Professional."</p>
           <div class="testimonial-rating">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -1394,7 +1437,7 @@
       <div class="contact-container">
         <div class="contact-info animate-on-scroll">
           <h3>Let's Start Your Career Transformation</h3>
-          <p>Ready to take your professional life to the next level? Fill out the form to send your details via your email app, and we’ll get back to you within 24 hours.</p>
+          <p>Ready to elevate your professional life? Fill out the form to send your details via your email app, and we’ll respond within 24 hours.</p>
           <div class="contact-details">
             <div><i class="fas fa-map-marker-alt"></i> London & Birmingham, United Kingdom</div>
             <div><i class="fas fa-phone"></i> <a href="tel:+447435344535">+44 7435 344535</a></div>
@@ -1402,20 +1445,24 @@
             <div><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</div>
           </div>
         </div>
-        <form class="contact-form animate-on-scroll" id="contactForm">
+        <form class="contact-form animate-on-scroll" id="contactForm" novalidate>
           <div class="form-group">
+            <label for="name" class="sr-only">Your Name</label>
             <input type="text" name="name" id="name" placeholder="Your Name" required aria-label="Your Name">
             <span class="error-message" id="name-error">Please enter your name.</span>
           </div>
           <div class="form-group">
+            <label for="email" class="sr-only">Your Email</label>
             <input type="email" name="email" id="email" placeholder="Your Email" required aria-label="Your Email">
             <span class="error-message" id="email-error">Please enter a valid email address.</span>
           </div>
           <div class="form-group">
+            <label for="phone" class="sr-only">Your Phone Number</label>
             <input type="tel" name="phone" id="phone" placeholder="Your Phone Number (Optional)" aria-label="Your Phone Number">
             <span class="error-message" id="phone-error">Please enter a valid phone number.</span>
           </div>
           <div class="form-group">
+            <label for="service" class="sr-only">Select a Service</label>
             <select name="service" id="service" required aria-label="Select a Service">
               <option value="" disabled selected>Select a Service</option>
               <option value="resume">Resume Writing & Optimization</option>
@@ -1428,13 +1475,14 @@
             <span class="error-message" id="service-error">Please select a service.</span>
           </div>
           <div class="form-group">
+            <label for="message" class="sr-only">Your Message</label>
             <textarea name="message" id="message" rows="5" placeholder="Your Message" required aria-label="Your Message"></textarea>
             <span class="error-message" id="message-error">Please enter your message.</span>
           </div>
           <button type="button" id="mailtoBtn" class="mailto-btn">Send via Your Email</button>
           <button type="button" id="copyBtn" class="copy-btn">Copy Details to Clipboard</button>
-          <p class="mailto-instructions">Click "Send via Your Email" to open your email app with your details pre-filled. Press "Send" in your email app to reach us!</p>
-          <div class="form-success" id="formSuccess">Thank you! Your email app should have opened with your details. Please press "Send" to contact us.</div>
+          <p class="mailto-instructions">Click "Send via Your Email" to open your email app with pre-filled details. Press "Send" to reach us!</p>
+          <div class="form-success" id="formSuccess">Thank you! Your email app should have opened. Please press "Send" to contact us.</div>
           <p class="fallback-link">
             No email app? <a href="mailto:consultation@theidealprofessional.com">Email us directly</a> or call +44 7435 344535.
           </p>
@@ -1497,8 +1545,8 @@
   <!-- Cookie Banner -->
   <div class="cookie-banner" id="cookieBanner">
     <div class="cookie-text">
-      <h4>We use cookies</h4>
-      <p>This website uses cookies to ensure you get the best experience on our website.</p>
+      <h4>We Use Cookies</h4>
+      <p>We use cookies to ensure you get the best experience on our website. <a href="#" aria-label="Learn more about our cookie policy">Learn more</a>.</p>
     </div>
     <div class="cookie-buttons">
       <button class="cookie-btn settings" id="cookieSettings">Cookie Settings</button>
@@ -1539,7 +1587,15 @@
         const targetId = anchor.getAttribute('href');
         if (targetId === '#') return;
         e.preventDefault();
-        document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+        const target = document.querySelector(targetId);
+        if (target) {
+          const offset = 80; // Adjust for fixed header
+          const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: elementPosition - offset,
+            behavior: 'smooth'
+          });
+        }
       });
     });
 
@@ -1555,15 +1611,16 @@
       field.classList.add('form-error');
       error.textContent = message;
       error.classList.add('active');
+      field.setAttribute('aria-invalid', 'true');
     };
 
     const clearErrors = () => {
-      const fields = ['name', 'email', 'phone', 'service', 'message'];
-      fields.forEach(fieldId => {
+      ['name', 'email', 'phone', 'service', 'message'].forEach(fieldId => {
         const field = document.getElementById(fieldId);
         const error = document.getElementById(`${fieldId}-error`);
         field.classList.remove('form-error');
         error.classList.remove('active');
+        field.setAttribute('aria-invalid', 'false');
       });
     };
 
@@ -1617,12 +1674,14 @@
         `Phone: ${phone || 'Not provided'}\n` +
         `Service: ${service}\n` +
         `Message:\n${message}\n\n` +
-        `Please reply to this email to confirm receipt. Thank you!`
+        `Please reply to confirm receipt. Thank you!`
       );
-      const mailtoLink = `mailto:theidealpro@gmail.com?subject=${subject}&body=${body}`;
+      const mailtoLink = `mailto:consultation@theidealprofessional.com?subject=${subject}&body=${body}`;
 
       try {
-        window.location.href = mailtoLink;
+        const link = document.createElement('a');
+        link.href = mailtoLink;
+        link.click();
         formSuccess.classList.add('active');
         formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
       } catch (error) {
@@ -1671,7 +1730,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.1 });
     animateElements.forEach(el => observer.observe(el));
 
     // Lazy load images
@@ -1685,8 +1744,10 @@
             lazyObserver.unobserve(img);
           }
         });
-      });
+      }, { rootMargin: '100px' });
       lazyImages.forEach(img => lazyObserver.observe(img));
+    } else {
+      lazyImages.forEach(img => img.src = img.dataset.src || img.src);
     }
 
     // Ensure responsiveness for touch devices
@@ -1705,6 +1766,17 @@
         e.preventDefault();
       }
     }, { passive: false });
+
+    // Keyboard navigation enhancements
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        body.classList.remove('menu-open');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        mobileMenuBtn.focus();
+      }
+    });
   </script>
 </body>
 </html>
