@@ -39,6 +39,8 @@
       --shadow-medium: 0 12px 36px rgba(0, 0, 0, 0.15);
       --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       --border-radius: 12px;
+      --menu-transition: transform 0.3s ease-in-out;
+      --overlay-bg: rgba(0, 0, 0, 0.5);
     }
 
     * {
@@ -80,6 +82,16 @@
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .animate-on-scroll {
@@ -198,6 +210,13 @@
       color: var(--text-color);
       cursor: pointer;
       z-index: 1002;
+      transition: color 0.3s ease;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--primary-color);
     }
 
     .header-btn {
@@ -234,6 +253,25 @@
     .header-btn:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-medium);
+    }
+
+    /* Mobile Menu Overlay */
+    .menu-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--overlay-bg);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
     }
 
     /* Hero Section */
@@ -1088,31 +1126,35 @@
       nav ul {
         position: fixed;
         top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        right: 0; /* Changed from left: 0 to right: 0 */
+        width: 80%; /* Set specific width instead of right: 0 */
+        max-width: 350px; /* Maximum width for larger screens */
+        height: 100%;
         background-color: var(--bg-light);
         flex-direction: column;
         padding: clamp(80px, 15vh, 100px) 20px;
         transform: translateX(100%);
-        transition: transform 0.4s ease;
+        transition: var(--menu-transition);
         z-index: 1001;
-        justify-content: center;
+        justify-content: flex-start; /* Changed from center */
         align-items: center;
         overflow-y: auto;
         box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
       }
       nav ul.active {
         transform: translateX(0);
+        animation: slideInRight 0.3s ease-out;
       }
       nav ul li {
         margin: 15px 0;
+        width: 100%; /* Full width for better touch targets */
       }
       nav ul li a {
         font-size: clamp(1.1rem, 3vw, 1.3rem);
         padding: 12px;
         width: 100%;
         text-align: center;
+        display: block; /* Ensure full width */
       }
       .header-btn {
         display: block;
@@ -1141,16 +1183,6 @@
       }
       body.menu-open {
         overflow: hidden;
-      }
-      body.menu-open::after {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.3);
-        z-index: 1000;
       }
       .features, .services, .service-cards, .client-types, .reasons, .testimonials {
         flex-direction: column;
@@ -1215,6 +1247,10 @@
         width: 100%;
         text-align: center;
       }
+      nav ul {
+        width: 100%; /* Full width on very small screens */
+        max-width: none;
+      }
     }
 
     @media (max-width: 400px) {
@@ -1249,6 +1285,12 @@
       }
       .btn::before, .header-btn::before, .service-btn::before, .service::before {
         display: none;
+      }
+      nav ul li a {
+        padding: 15px; /* Larger touch targets for mobile */
+      }
+      .mobile-menu-btn {
+        padding: 10px; /* Larger touch target */
       }
     }
   </style>
@@ -1290,6 +1332,9 @@
       </nav>
     </div>
   </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="menu-overlay" id="menuOverlay"></div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -1538,7 +1583,7 @@
       <div class="contact-container">
         <div class="contact-info animate-on-scroll">
           <h3>Let's Start Your Career Transformation</h3>
-          <p>Ready to take your professional life to the next level? Fill out the form to send your details via your email app, and we’ll get back to you within 24 hours.</p>
+          <p>Ready to take your professional life to the next level? Fill out the form to send your details via your email app, and we'll get back to you within 24 hours.</p>
           <div class="contact-details">
             <div><i class="fas fa-map-marker-alt"></i> London & Birmingham, United Kingdom</div>
             <div><i class="fas fa-phone"></i> <a href="tel:+447435344535">+44 7435 344535</a></div>
@@ -1654,30 +1699,52 @@
     // Set current year
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    // Mobile menu toggle
+    // Mobile menu toggle with improved functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('nav ul');
     const body = document.body;
+    const menuOverlay = document.getElementById('menuOverlay');
 
-    mobileMenuBtn.addEventListener('click', () => {
+    function toggleMenu() {
       const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
       mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
       navMenu.classList.toggle('active');
       body.classList.toggle('menu-open');
+      menuOverlay.classList.toggle('active');
       mobileMenuBtn.innerHTML = isExpanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', toggleMenu);
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isMenuOpen = navMenu.classList.contains('active');
+      const isClickInsideMenu = navMenu.contains(event.target);
+      const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+      
+      if (isMenuOpen && !isClickInsideMenu && !isClickOnMenuBtn) {
+        toggleMenu();
+      }
     });
 
-    // Smooth scrolling
+    // Smooth scrolling with menu closing
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', e => {
         const targetId = anchor.getAttribute('href');
         if (targetId === '#') return;
+        
         e.preventDefault();
-        document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
-        navMenu.classList.remove('active');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
-        body.classList.remove('menu-open');
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        
+        // Close mobile menu if open
+        if (navMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+        
+        // Scroll to target after a small delay to allow menu to close
+        setTimeout(() => {
+          document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
       });
     });
 
@@ -1831,11 +1898,23 @@
     window.addEventListener('resize', () => {
       if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
         body.classList.remove('menu-open');
         mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
       }
     });
+
+    // Detect touch devices for better interaction
+    const isTouchDevice = () => {
+      return ('ontouchstart' in window) || 
+             (navigator.maxTouchPoints > 0) || 
+             (navigator.msMaxTouchPoints > 0);
+    };
+
+    if (isTouchDevice()) {
+      document.documentElement.classList.add('touch-device');
+    }
   </script>
 </body>
 </html>
