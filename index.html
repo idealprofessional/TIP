@@ -33,6 +33,7 @@
       --bg-color: #0a0a0a;
       --bg-light: #1c1c1c;
       --accent-color: #f0f0f0;
+      --error-color: #ff6b6b; /* Added for error messages */
       --shadow-light: 0 8px 24px rgba(0,0,0,0.3);
       --shadow-medium: 0 12px 36px rgba(0,0,0,0.4);
       --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -744,12 +745,16 @@
       background: linear-gradient(90deg, var(--primary-color), var(--primary-dark));
     }
 
+    .contact-form .form-group {
+      margin-bottom: 20px;
+      position: relative;
+    }
+
     .contact-form input,
     .contact-form select,
     .contact-form textarea {
       width: 100%;
       padding: 14px;
-      margin-bottom: 20px;
       border: none;
       border-radius: var(--border-radius);
       font-size: 1rem;
@@ -814,6 +819,67 @@
     .contact-form button:hover {
       transform: translateY(-4px);
       box-shadow: var(--shadow-medium);
+    }
+
+    .contact-form .mailto-btn,
+    .contact-form .copy-btn {
+      margin-top: 15px;
+    }
+
+    .contact-form .mailto-instructions {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    .contact-form .error-message {
+      color: var(--error-color);
+      font-size: 0.9rem;
+      margin-top: 5px;
+      display: none;
+      position: absolute;
+      bottom: -20px;
+      left: 0;
+    }
+
+    .contact-form .error-message.active {
+      display: block;
+    }
+
+    .contact-form .form-error {
+      box-shadow: 0 0 8px var(--error-color);
+    }
+
+    .contact-form .form-success {
+      background-color: var(--bg-light);
+      padding: 20px;
+      border-radius: var(--border-radius);
+      text-align: center;
+      color: var(--primary-color);
+      font-size: 1.1rem;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .contact-form .form-success.active {
+      display: block;
+    }
+
+    .contact-form .fallback-link {
+      margin-top: 20px;
+      font-size: 1rem;
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    .contact-form .fallback-link a {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
+    .contact-form .fallback-link a:hover {
+      color: var(--primary-dark);
     }
 
     /* Footer */
@@ -1049,6 +1115,10 @@
       }
       .service-card .service-image {
         height: 180px;
+      }
+      .contact-form .error-message {
+        font-size: 0.85rem;
+        bottom: -18px;
       }
     }
   </style>
@@ -1338,7 +1408,7 @@
       <div class="contact-container">
         <div class="contact-info animate-on-scroll">
           <h3>Let's Start Your Career Transformation</h3>
-          <p>Ready to take your professional life to the next level? Our team of career experts is here to help you achieve your goals. Fill out the form and we'll get back to you within 24 hours.</p>
+          <p>Ready to take your professional life to the next level? Fill out the form to send your details via your email app, and we’ll get back to you within 24 hours.</p>
           <div class="contact-details">
             <div><i class="fas fa-map-marker-alt"></i> London & Birmingham, United Kingdom</div>
             <div><i class="fas fa-phone"></i> <a href="tel:+447435344535">+44 7435 344535</a></div>
@@ -1347,20 +1417,41 @@
           </div>
         </div>
         <form class="contact-form animate-on-scroll" id="contactForm">
-          <input type="text" name="name" id="name" placeholder="Your Name" required aria-label="Your Name">
-          <input type="email" name="email" id="email" placeholder="Your Email" required aria-label="Your Email">
-          <input type="tel" name="phone" id="phone" placeholder="Your Phone Number" aria-label="Your Phone Number">
-          <select name="service" id="service" required aria-label="Select a Service">
-            <option value="" disabled selected>Select a Service</option>
-            <option value="resume">Resume Writing & Optimization</option>
-            <option value="linkedin">LinkedIn Profile Enhancement</option>
-            <option value="interview">Interview Coaching</option>
-            <option value="branding">Personal Branding</option>
-            <option value="job-search">Job Search Consultation</option>
-            <option value="other">Other Services</option>
-          </select>
-          <textarea name="message" id="message" rows="5" placeholder="Your Message" required aria-label="Your Message"></textarea>
-          <button type="submit">Send Message</button>
+          <div class="form-group">
+            <input type="text" name="name" id="name" placeholder="Your Name" required aria-label="Your Name">
+            <span class="error-message" id="name-error">Please enter your name.</span>
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" id="email" placeholder="Your Email" required aria-label="Your Email">
+            <span class="error-message" id="email-error">Please enter a valid email address.</span>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="phone" id="phone" placeholder="Your Phone Number (Optional)" aria-label="Your Phone Number">
+            <span class="error-message" id="phone-error">Please enter a valid phone number.</span>
+          </div>
+          <div class="form-group">
+            <select name="service" id="service" required aria-label="Select a Service">
+              <option value="" disabled selected>Select a Service</option>
+              <option value="resume">Resume Writing & Optimization</option>
+              <option value="linkedin">LinkedIn Profile Enhancement</option>
+              <option value="interview">Interview Coaching</option>
+              <option value="branding">Personal Branding</option>
+              <option value="job-search">Job Search Consultation</option>
+              <option value="other">Other Services</option>
+            </select>
+            <span class="error-message" id="service-error">Please select a service.</span>
+          </div>
+          <div class="form-group">
+            <textarea name="message" id="message" rows="5" placeholder="Your Message" required aria-label="Your Message"></textarea>
+            <span class="error-message" id="message-error">Please enter your message.</span>
+          </div>
+          <button type="button" id="mailtoBtn" class="mailto-btn">Send via Your Email</button>
+          <button type="button" id="copyBtn" class="copy-btn">Copy Details to Clipboard</button>
+          <p class="mailto-instructions">Click "Send via Your Email" to open your email app with your details pre-filled. Press "Send" in your email app to reach us!</p>
+          <div class="form-success" id="formSuccess">Thank you! Your email app should have opened with your details. Please press "Send" to contact us.</div>
+          <p class="fallback-link">
+            No email app? <a href="mailto:consultation@theidealprofessional.com">Email us directly</a> or call +44 7435 344535.
+          </p>
         </form>
       </div>
     </div>
@@ -1456,25 +1547,113 @@
 
     // Form handling
     const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', e => {
-      e.preventDefault();
+    const mailtoBtn = document.getElementById('mailtoBtn');
+    const copyBtn = document.getElementById('copyBtn');
+    const formSuccess = document.getElementById('formSuccess');
+
+    const showError = (fieldId, errorId, message) => {
+      const field = document.getElementById(fieldId);
+      const error = document.getElementById(errorId);
+      field.classList.add('form-error');
+      error.textContent = message;
+      error.classList.add('active');
+    };
+
+    const clearErrors = () => {
+      const fields = ['name', 'email', 'phone', 'service', 'message'];
+      fields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        const error = document.getElementById(`${fieldId}-error`);
+        field.classList.remove('form-error');
+        error.classList.remove('active');
+      });
+    };
+
+    const validateForm = () => {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const service = document.getElementById('service').value;
       const message = document.getElementById('message').value.trim();
+
+      let isValid = true;
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!name || !email || !message || !emailRegex.test(email)) {
-        alert('Please fill in all required fields with valid data.');
-        return;
+      const phoneRegex = /^\+?[\d\s-]{10,}$/;
+
+      clearErrors();
+
+      if (!name) {
+        showError('name', 'name-error', 'Please enter your name.');
+        isValid = false;
       }
-      const submitBtn = contactForm.querySelector('button');
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-      setTimeout(() => {
-        contactForm.reset();
-        alert('Message sent! We’ll get back to you soon.');
-        submitBtn.textContent = 'Send Message';
-        submitBtn.disabled = false;
-      }, 1500);
+      if (!email || !emailRegex.test(email)) {
+        showError('email', 'email-error', 'Please enter a valid email address.');
+        isValid = false;
+      }
+      if (phone && !phoneRegex.test(phone)) {
+        showError('phone', 'phone-error', 'Please enter a valid phone number.');
+        isValid = false;
+      }
+      if (!service) {
+        showError('service', 'service-error', 'Please select a service.');
+        isValid = false;
+      }
+      if (!message) {
+        showError('message', 'message-error', 'Please enter your message.');
+        isValid = false;
+      }
+
+      return { isValid, name, email, phone, service, message };
+    };
+
+    // Mailto button handler
+    mailtoBtn.addEventListener('click', () => {
+      const { isValid, name, email, phone, service, message } = validateForm();
+
+      if (!isValid) return;
+
+      // Optional: Track mailto click with Google Analytics (uncomment if GA is set up)
+      /*
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'event': 'mailto_click',
+        'form_name': 'contact'
+      });
+      */
+
+      const subject = encodeURIComponent('Contact Form Submission - The Ideal Professional');
+      const body = encodeURIComponent(
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Phone: ${phone || 'Not provided'}\n` +
+        `Service: ${service}\n` +
+        `Message:\n${message}\n\n` +
+        `Please reply to this email to confirm receipt. Thank you!`
+      );
+      const mailtoLink = `mailto:theidealpro@gmail.com?subject=${subject}&body=${body}`;
+
+      try {
+        window.location.href = mailtoLink;
+        formSuccess.classList.add('active');
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (error) {
+        console.error('Mailto failed:', error);
+        alert('Unable to open your email app. Please use the "Copy Details to Clipboard" button or email consultation@theidealprofessional.com directly.');
+      }
+    });
+
+    // Copy to clipboard handler
+    copyBtn.addEventListener('click', () => {
+      const { isValid, name, email, phone, service, message } = validateForm();
+
+      if (!isValid) return;
+
+      const text = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nService: ${service}\nMessage:\n${message}`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Details copied! Paste them into an email to consultation@theidealprofessional.com.');
+      }).catch(() => {
+        alert('Copy failed. Please manually copy your details and email consultation@theidealprofessional.com.');
+      });
     });
 
     // Cookie banner
