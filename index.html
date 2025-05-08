@@ -105,14 +105,15 @@
     }
 
     /* Header */
-    .top-bar {
-      background-color: var(--bg-light);
-      color: var(--text-light);
-      padding: clamp(8px, 2vw, 12px) 0;
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
-      position: relative;
-      z-index: 1001;
-    }
+.top-bar {
+  background-color: var(--bg-light);
+  color: var(--text-color); /* Changed from text-light to text-color for better visibility */
+  padding: clamp(8px, 2vw, 12px) 0;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  position: relative;
+  z-index: 1001;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
 
     .top-bar .container {
       display: flex;
@@ -175,16 +176,17 @@
       padding: 0;
     }
 
-    nav ul li a {
-      color: var(--text-color);
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
-      position: relative;
-      padding: 8px 0;
-      display: block;
-    }
+nav ul li a {
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  position: relative;
+  padding: 8px 0;
+  display: block;
+  letter-spacing: 0.5px; /* Added letter spacing for better readability */
+}
 
     nav ul li a::after {
       content: '';
@@ -275,49 +277,48 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-      color: var(--text-color);
-      text-align: center;
-      padding: clamp(100px, 15vh, 160px) 20px;
-      position: relative;
-      overflow: hidden;
-      min-height: 70vh;
-    }
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), /* Darker overlay for better contrast */
+              url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  color: var(--bg-light); /* Changed text color to white for better contrast against darker background */
+  text-align: center;
+  padding: clamp(80px, 12vh, 120px) 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+}
 
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(circle, rgba(0,167,181,0.1) 0%, transparent 70%);
-      z-index: 1;
-    }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 70%);
+  z-index: 1;
+}
 
-    .hero .container {
-      position: relative;
-      z-index: 2;
-    }
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 25px;
+  animation: fadeInUp 1s ease-out;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Enhanced text shadow for better readability */
+  color: var(--bg-light);
+}
 
-    .hero h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.8rem, 5vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 25px;
-      animation: fadeInUp 1s ease-out;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .hero p {
-      font-size: clamp(1rem, 3vw, 1.3rem);
-      margin-bottom: 40px;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      animation: fadeInUp 1.2s ease-out;
-    }
-
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 1.2s ease-out;
+  color: var(--bg-light);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3); /* Added text shadow for better readability */
+  font-weight: 400;
+}
     .btn {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: var(--bg-light);
