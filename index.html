@@ -17,7 +17,7 @@
 
   <!-- Preload Critical Assets -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="preconnect" href Upcoming: https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap">
 
@@ -54,7 +54,7 @@
       background-color: var(--bg-color);
       color: var(--text-color);
       overflow-x: hidden;
-      font-size: clamp(16px, 2.5vw, 18px); /* Responsive font size */
+      font-size: clamp(16px, 2.5vw, 18px);
     }
 
     img {
@@ -73,18 +73,13 @@
       width: 90%;
       max-width: 1400px;
       margin: auto;
-      padding: 0 clamp(10px, 5vw, 20px); /* Responsive padding */
+      padding: 0 clamp(10px, 5vw, 20px);
     }
 
     /* Animations */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes scaleIn {
-      from { transform: scale(0.95); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
     }
 
     .animate-on-scroll {
@@ -112,17 +107,19 @@
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
     .top-bar-left, .top-bar-right {
       display: flex;
-      gap: clamp(15px, 3vw, 25px);
+      gap: clamp(10px, 3vw, 15px);
+      flex-wrap: wrap;
     }
 
     .top-bar a {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       transition: color 0.3s ease, transform 0.3s ease;
     }
 
@@ -133,7 +130,7 @@
 
     header {
       background-color: var(--bg-light);
-      padding: clamp(15px, 3vw, 20px) 0;
+      padding: clamp(10px, 2vw, 15px) 0;
       box-shadow: var(--shadow-light);
       position: sticky;
       top: 0;
@@ -144,10 +141,12 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .logo img {
-      height: clamp(50px, 10vw, 60px);
+      height: clamp(40px, 8vw, 50px);
       width: auto;
       filter: brightness(0) invert(1);
       transition: transform 0.3s ease;
@@ -160,7 +159,9 @@
     nav ul {
       list-style: none;
       display: flex;
-      gap: clamp(20px, 4vw, 35px);
+      gap: clamp(15px, 3vw, 25px);
+      margin: 0;
+      padding: 0;
     }
 
     nav ul li a {
@@ -168,9 +169,10 @@
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       text-transform: uppercase;
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
       position: relative;
       padding: 8px 0;
+      display: block;
     }
 
     nav ul li a::after {
@@ -195,12 +197,13 @@
       font-size: clamp(1.5rem, 4vw, 1.8rem);
       color: var(--text-color);
       cursor: pointer;
+      z-index: 1002;
     }
 
     .header-btn {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: var(--bg-color);
-      padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 28px);
+      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
@@ -208,7 +211,9 @@
       box-shadow: var(--shadow-light);
       position: relative;
       overflow: hidden;
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      text-align: center;
+      min-width: 120px;
     }
 
     .header-btn::before {
@@ -236,9 +241,10 @@
       background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
       color: var(--text-color);
       text-align: center;
-      padding: clamp(120px, 20vh, 180px) 20px;
+      padding: clamp(100px, 15vh, 160px) 20px;
       position: relative;
       overflow: hidden;
+      min-height: 70vh;
     }
 
     .hero::before {
@@ -259,17 +265,17 @@
 
     .hero h1 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-size: clamp(2rem, 6vw, 4rem);
       font-weight: 700;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       animation: fadeInUp 1s ease-out;
       text-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     .hero p {
-      font-size: clamp(1.2rem, 3vw, 1.6rem);
-      margin-bottom: 50px;
-      max-width: 900px;
+      font-size: clamp(1.1rem, 3vw, 1.5rem);
+      margin-bottom: 40px;
+      max-width: 800px;
       margin-left: auto;
       margin-right: auto;
       animation: fadeInUp 1.2s ease-out;
@@ -278,7 +284,7 @@
     .btn {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: var(--bg-color);
-      padding: clamp(12px, 3vw, 16px) clamp(30px, 5vw, 40px);
+      padding: clamp(10px, 3vw, 14px) clamp(25px, 5vw, 35px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
@@ -287,7 +293,10 @@
       position: relative;
       overflow: hidden;
       transition: var(--transition);
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+      display: inline-block;
+      min-width: 150px;
+      text-align: center;
     }
 
     .btn::before {
@@ -314,7 +323,7 @@
       background: transparent;
       border: 3px solid var(--primary-color);
       color: var(--primary-color);
-      margin-left: 20px;
+      margin-left: clamp(10px, 2vw, 15px);
     }
 
     .btn.secondary:hover {
@@ -325,16 +334,17 @@
 
     /* Sections */
     section {
-      padding: clamp(80px, 15vh, 120px) 0;
+      padding: clamp(60px, 10vh, 100px) 0;
       position: relative;
+      min-height: 50vh;
     }
 
     .section-title {
       text-align: center;
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      font-size: clamp(2rem, 5vw, 3rem);
       font-weight: 700;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
       color: var(--text-color);
       position: relative;
       text-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -343,19 +353,19 @@
     .section-title::after {
       content: '';
       position: absolute;
-      bottom: -12px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 120px;
-      height: 5px;
+      width: 100px;
+      height: 4px;
       background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
       border-radius: 2px;
     }
 
     .section-intro, .section-outro {
       text-align: center;
-      max-width: 900px;
-      margin: 0 auto 50px;
+      max-width: 800px;
+      margin: 0 auto 40px;
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: var(--text-light);
     }
@@ -364,31 +374,31 @@
     .features {
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 4vw, 30px);
+      gap: clamp(15px, 3vw, 25px);
       flex-wrap: wrap;
     }
 
     .feature {
       background-color: var(--bg-light);
-      padding: clamp(20px, 4vw, 30px);
+      padding: clamp(15px, 3vw, 25px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       text-align: center;
       transition: var(--transition);
       flex: 1;
-      min-width: 280px;
-      max-width: 320px;
+      min-width: clamp(250px, 45vw, 300px);
+      max-width: 350px;
     }
 
     .feature:hover {
-      transform: translateY(-10px) scale(1.03);
+      transform: translateY(-8px) scale(1.02);
       box-shadow: var(--shadow-medium);
     }
 
     .feature i {
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-size: clamp(2rem, 5vw, 3rem);
       color: var(--primary-color);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       transition: transform 0.3s ease;
     }
 
@@ -398,8 +408,8 @@
 
     .feature h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.4rem, 3vw, 1.6rem);
-      margin-bottom: 15px;
+      font-size: clamp(1.3rem, 3vw, 1.5rem);
+      margin-bottom: 10px;
     }
 
     /* About Section */
@@ -408,9 +418,9 @@
     }
 
     #about p {
-      max-width: 800px;
-      margin: 20px auto;
-      font-size: clamp(1rem, 2.5vw, 1.1rem);
+      max-width: 700px;
+      margin: 15px auto;
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
       color: var(--text-light);
     }
 
@@ -418,13 +428,13 @@
     .services {
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 4vw, 30px);
+      gap: clamp(15px, 3vw, 25px);
       flex-wrap: wrap;
     }
 
     .service {
       background-color: var(--bg-light);
-      padding: clamp(30px, 5vw, 40px) 30px;
+      padding: clamp(20px, 4vw, 30px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       text-align: center;
@@ -432,8 +442,8 @@
       overflow: hidden;
       transition: var(--transition);
       flex: 1;
-      min-width: 260px;
-      max-width: 300px;
+      min-width: clamp(240px, 45vw, 280px);
+      max-width: 320px;
     }
 
     .service::before {
@@ -442,7 +452,7 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 5px;
+      height: 4px;
       background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
       transform: scaleX(0);
       transition: transform 0.3s ease;
@@ -453,27 +463,27 @@
     }
 
     .service:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-medium);
     }
 
     .service i {
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-size: clamp(2rem, 5vw, 3rem);
       color: var(--primary-color);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .service h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.5rem, 3vw, 1.7rem);
-      margin-bottom: 15px;
+      font-size: clamp(1.4rem, 3vw, 1.6rem);
+      margin-bottom: 10px;
     }
 
     /* What We Offer Section */
     .service-cards {
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 4vw, 30px);
+      gap: clamp(15px, 3vw, 25px);
       flex-wrap: wrap;
     }
 
@@ -484,49 +494,47 @@
       box-shadow: var(--shadow-light);
       transition: var(--transition);
       flex: 1;
-      min-width: 280px;
-      max-width: 320px;
-      position: relative;
+      min-width: clamp(260px, 45vw, 300px);
+      max-width: 340px;
     }
 
     .service-card:hover {
-      transform: translateY(-10px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-medium);
     }
 
     .service-image {
       width: 100%;
-      height: clamp(180px, 30vw, 220px);
+      height: clamp(160px, 25vw, 200px);
       object-fit: cover;
       transition: transform 0.5s ease;
     }
 
     .service-card:hover .service-image {
-      transform: scale(1.08);
+      transform: scale(1.05);
     }
 
     .service-info {
-      padding: clamp(20px, 4vw, 25px);
+      padding: clamp(15px, 3vw, 20px);
     }
 
     .service-info h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.3rem, 3vw, 1.5rem);
-      margin-bottom: 15px;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      margin-bottom: 10px;
     }
 
     .service-btn {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: var(--bg-color);
-      padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 24px);
+      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       text-transform: uppercase;
       display: inline-block;
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
     }
-
     .service-btn:hover {
       transform: translateY(-3px);
       box-shadow: var(--shadow-medium);
@@ -536,20 +544,20 @@
     .client-types {
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 4vw, 30px);
+      gap: clamp(15px, 3vw, 25px);
       flex-wrap: wrap;
     }
 
     .client-type {
       background-color: var(--bg-light);
-      padding: clamp(20px, 4vw, 30px);
+      padding: clamp(15px, 3vw, 25px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       text-align: center;
       transition: var(--transition);
       flex: 1;
-      min-width: 240px;
-      max-width: 260px;
+      min-width: clamp(220px, 45vw, 260px);
+      max-width: 280px;
     }
 
     .client-type:hover {
@@ -558,35 +566,35 @@
     }
 
     .client-type i {
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-size: clamp(2rem, 5vw, 3rem);
       color: var(--primary-color);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .client-type h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.3rem, 3vw, 1.5rem);
-      margin-bottom: 15px;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      margin-bottom: 10px;
     }
 
     /* Why Choose Us Section */
     .reasons {
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 4vw, 30px);
+      gap: clamp(15px, 3vw, 25px);
       flex-wrap: wrap;
     }
 
     .reason {
       background-color: var(--bg-light);
-      padding: clamp(20px, 4vw, 30px);
+      padding: clamp(15px, 3vw, 25px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       text-align: center;
-      transition: var(--transition);
+      c
       flex: 1;
-      min-width: 260px;
-      max-width: 280px;
+      min-width: clamp(240px, 45vw, 280px);
+      max-width: 300px;
     }
 
     .reason:hover {
@@ -595,35 +603,35 @@
     }
 
     .reason i {
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
+      font-size: clamp(2rem, 5vw, 3rem);
       color: var(--primary-color);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .reason h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.3rem, 3vw, 1.5rem);
-      margin-bottom: 15px;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      margin-bottom: 10px;
     }
 
     /* Testimonials Section */
     .testimonials {
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 4vw, 30px);
+      gap: clamp(15px, 3vw, 25px);
       flex-wrap: wrap;
     }
 
     .testimonial {
       background-color: var(--bg-light);
-      padding: clamp(20px, 4vw, 30px);
+      padding: clamp(15px, 3vw, 25px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       position: relative;
       transition: var(--transition);
       flex: 1;
-      min-width: 280px;
-      max-width: 320px;
+      min-width: clamp(260px, 45vw, 300px);
+      max-width: 340px;
     }
 
     .testimonial:hover {
@@ -634,49 +642,49 @@
     .testimonial:before {
       content: '\201C';
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(4rem, 10vw, 6rem);
+      font-size: clamp(3rem, 8vw, 5rem);
       color: var(--primary-color);
       opacity: 0.15;
       position: absolute;
       top: 10px;
-      left: 20px;
+      left: 15px;
     }
 
     .testimonial-header {
       display: flex;
       align-items: center;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
 
     .testimonial-image {
-      width: clamp(50px, 12vw, 60px);
-      height: clamp(50px, 12vw, 60px);
+      width: clamp(40px, 10vw, 50px);
+      height: clamp(40px, 10vw, 50px);
       border-radius: 50%;
       object-fit: cover;
-      margin-right: 15px;
-      border: 3px solid var(--primary-color);
+      margin-right: 10px;
+      border: 2px solid var(--primary-color);
     }
 
     .testimonial-info h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       margin-bottom: 5px;
     }
 
     .testimonial-info p {
       color: var(--text-light);
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
     }
 
     .testimonial p {
       font-style: italic;
       color: var(--text-light);
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
     }
 
     .testimonial-rating {
       color: #FFD700;
-      margin-top: 15px;
+      margin-top: 10px;
     }
 
     /* CTA Section */
@@ -684,20 +692,21 @@
       background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1951&q=80') center/cover no-repeat;
       color: var(--text-color);
       text-align: center;
-      padding: clamp(100px, 18vh, 140px) 20px;
+      padding: clamp(80px, 12vh, 120px) 20px;
       position: relative;
+      min-height: 50vh;
     }
 
     .cta h2 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(2rem, 5vw, 3rem);
-      margin-bottom: 30px;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 25px;
     }
 
     .cta p {
-      font-size: clamp(1.2rem, 3vw, 1.4rem);
-      margin-bottom: 40px;
-      max-width: 900px;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      margin-bottom: 35px;
+      max-width: 700px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -706,40 +715,40 @@
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: clamp(30px, 5vw, 50px);
+      gap: clamp(20px, 4vw, 40px);
       align-items: start;
     }
 
     .contact-info h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.8rem, 4vw, 2.2rem);
-      margin-bottom: 20px;
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      margin-bottom: 15px;
       color: var(--primary-color);
     }
 
     .contact-info p {
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
       color: var(--text-light);
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     .contact-details div {
       display: flex;
       align-items: center;
-      margin-bottom: 20px;
-      font-size: clamp(1rem, 2.5vw, 1.1rem);
+      margin-bottom: 15px;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
     }
 
     .contact-details i {
       color: var(--primary-color);
-      font-size: clamp(1.3rem, 3vw, 1.5rem);
-      margin-right: 15px;
-      width: 24px;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      margin-right: 10px;
+      width: 20px;
     }
 
     .contact-form {
       background-color: var(--bg-light);
-      padding: clamp(30px, 5vw, 40px);
+      padding: clamp(20px, 4vw, 30px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       font-family: 'Inter', sans-serif;
@@ -754,12 +763,12 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 5px;
+      height: 4px;
       background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     }
 
     .contact-form .form-group {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       position: relative;
     }
 
@@ -767,10 +776,10 @@
     .contact-form select,
     .contact-form textarea {
       width: 100%;
-      padding: clamp(12px, 2vw, 14px);
+      padding: clamp(10px, 2vw, 12px);
       border: none;
       border-radius: var(--border-radius);
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
       background-color: #3A3A3A;
       color: var(--text-color);
       box-shadow: inset 0 2px 4px rgba(0,0,0,0.3), 0 2px 4px rgba(255,255,255,0.1);
@@ -780,7 +789,7 @@
     .contact-form input:focus,
     .contact-form select:focus,
     .contact-form textarea:focus {
-      box-shadow: 0 0 10px rgba(0,167,181,0.5), 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 0 8px rgba(0,167,181,0.5), 0 3px 6px rgba(0,0,0,0.2);
       transform: translateY(-2px);
       outline: none;
     }
@@ -789,17 +798,17 @@
       appearance: none;
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23E0E0E0' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
-      background-position: right 14px center;
+      background-position: right 12px center;
     }
 
     .contact-form textarea {
       resize: vertical;
-      min-height: clamp(120px, 20vh, 140px);
+      min-height: clamp(100px, 15vh, 120px);
     }
 
     .contact-form button {
       width: 100%;
-      padding: clamp(12px, 3vw, 16px);
+      padding: clamp(10px, 2vw, 12px);
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       color: var(--bg-color);
       border: none;
@@ -812,7 +821,7 @@
       position: relative;
       overflow: hidden;
       transition: var(--transition);
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
     }
 
     .contact-form button::before {
@@ -831,29 +840,29 @@
     }
 
     .contact-form button:hover {
-      transform: translateY(-4px);
+      transform: translateY(-3px);
       box-shadow: var(--shadow-medium);
     }
 
     .contact-form .mailto-btn,
     .contact-form .copy-btn {
-      margin-top: 15px;
+      margin-top: 10px;
     }
 
     .contact-form .mailto-instructions {
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
       color: var(--text-light);
-      margin: 15px 0;
+      margin: 10px 0;
       text-align: center;
     }
 
     .contact-form .error-message {
       color: var(--error-color);
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
       margin-top: 5px;
       display: none;
       position: absolute;
-      bottom: -20px;
+      bottom: -18px;
       left: 0;
     }
 
@@ -862,17 +871,17 @@
     }
 
     .contact-form .form-error {
-      box-shadow: 0 0 8px var(--error-color);
+      box-shadow: 0 0 6px var(--error-color);
     }
 
     .contact-form .form-success {
       background-color: var(--bg-light);
-      padding: clamp(15px, 3vw, 20px);
+      padding: clamp(10px, 2vw, 15px);
       border-radius: var(--border-radius);
       text-align: center;
       color: var(--primary-color);
-      font-size: clamp(1rem, 2.5vw, 1.1rem);
-      margin-top: 20px;
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      margin-top: 15px;
       display: none;
     }
 
@@ -881,8 +890,8 @@
     }
 
     .contact-form .fallback-link {
-      margin-top: 20px;
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      margin-top: 15px;
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
       color: var(--text-light);
       text-align: center;
     }
@@ -900,37 +909,37 @@
     footer {
       background-color: var(--bg-light);
       color: var(--text-light);
-      padding: clamp(60px, 10vh, 80px) 0 30px;
+      padding: clamp(50px, 8vh, 70px) 0 25px;
       position: relative;
     }
 
     .footer-content {
       display: flex;
       justify-content: center;
-      gap: clamp(20px, 5vw, 40px);
+      gap: clamp(15px, 4vw, 30px);
       flex-wrap: wrap;
     }
 
     .footer-column {
       flex: 1;
-      min-width: 220px;
-      max-width: 260px;
+      min-width: clamp(200px, 45vw, 240px);
+      max-width: 280px;
     }
 
     .footer-column h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.3rem, 3vw, 1.5rem);
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
       color: var(--text-color);
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       position: relative;
     }
 
     .footer-column h3::after {
       content: '';
       position: absolute;
-      bottom: -8px;
+      bottom: -6px;
       left: 0;
-      width: 50px;
+      width: 40px;
       height: 3px;
       background: var(--primary-color);
     }
@@ -940,7 +949,7 @@
     }
 
     .footer-column ul li {
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .footer-column ul li a:hover {
@@ -951,15 +960,15 @@
 
     .social-links {
       display: flex;
-      gap: 15px;
-      margin-top: 20px;
+      gap: 10px;
+      margin-top: 15px;
     }
 
     .social-links a {
       color: var(--text-color);
       background: #3A3A3A;
-      width: clamp(40px, 8vw, 48px);
-      height: clamp(40px, 8vw, 48px);
+      width: clamp(35px, 7vw, 40px);
+      height: clamp(35px, 7vw, 40px);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -970,25 +979,25 @@
     .social-links a:hover {
       background: var(--primary-color);
       color: var(--bg-color);
-      transform: translateY(-4px) rotate(5deg);
+      transform: translateY(-3px) rotate(5deg);
     }
 
     .footer-bottom {
       text-align: center;
-      margin-top: 40px;
+      margin-top: 30px;
       border-top: 1px solid #3A3A3A;
-      padding-top: 20px;
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      padding-top: 15px;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
     }
 
     /* Cookie Banner */
     .cookie-banner {
       position: fixed;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
       background-color: var(--bg-light);
-      padding: clamp(15px, 3vw, 20px);
+      padding: clamp(10px, 2vw, 15px);
       border-radius: var(--border-radius);
       box-shadow: var(--shadow-light);
       display: flex;
@@ -1001,27 +1010,28 @@
 
     .cookie-text h4 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: var(--text-color);
-      margin-bottom: 8px;
+      margin-bottom: 5px;
     }
 
     .cookie-text p {
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
       color: var(--text-light);
     }
 
     .cookie-buttons {
       display: flex;
-      gap: 15px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .cookie-btn {
-      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
+      padding: clamp(6px, 2vw, 8px) clamp(12px, 3vw, 15px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
       cursor: pointer;
     }
 
@@ -1058,17 +1068,18 @@
 
     @media (max-width: 992px) {
       .hero h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        font-size: clamp(1.8rem, 5vw, 3rem);
       }
       .hero p {
-        font-size: clamp(1.2rem, 3vw, 1.4rem);
+        font-size: clamp(1rem, 3vw, 1.3rem);
       }
       .section-title {
-        font-size: clamp(2rem, 4vw, 2.8rem);
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
       }
       .top-bar .container {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
+        align-items: center;
       }
     }
 
@@ -1076,77 +1087,130 @@
       .mobile-menu-btn {
         display: block;
       }
+      nav {
+        position: relative;
+        flex-wrap: nowrap;
+      }
       nav ul {
-        position: absolute;
-        top: 100%;
+        position: fixed;
+        top: 0;
         left: 0;
         right: 0;
+        bottom: 0;
         background-color: var(--bg-light);
         flex-direction: column;
-        padding: 20px;
-        transform: translateY(-100%);
+        padding: clamp(80px, 15vh, 100px) 20px;
+        transform: translateX(100%);
         transition: transform 0.4s ease;
-        box-shadow: var(--shadow-light);
+        z-index: 1001;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto;
       }
       nav ul.active {
-        transform: translateY(0);
+        transform: translateX(0);
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      nav ul li a {
+        font-size: clamp(1rem, 3vw, 1.2rem);
+        padding: 10px;
+        width: 100%;
+        text-align: center;
       }
       .header-btn {
-        display: none;
+        display: block;
+        margin-top: 15px;
+        width: 100%;
+        max-width: 200px;
+        align-self: center;
       }
       .hero {
-        padding: clamp(100px, 18vh, 140px) 20px;
+        padding: clamp(80px, 12vh, 120px) 15px;
+        min-height: 60vh;
       }
       .hero h1 {
-        font-size: clamp(2rem, 5vw, 2.8rem);
+        font-size: clamp(1.6rem, 5vw, 2.5rem);
       }
       .cookie-banner {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
+        gap: 10px;
       }
       .btn.secondary {
         margin-left: 0;
-        margin-top: 15px;
+        margin-top: 10px;
+      }
+      body.menu-open {
+        overflow: hidden;
+      }
+      body.menu-open::after {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
       }
     }
 
     @media (max-width: 576px) {
       .hero h1 {
-        font-size: clamp(1.8rem, 5vw, 2.2rem);
+        font-size: clamp(1.4rem, 5vw, 2rem);
       }
       .hero p {
-        font-size: clamp(1rem, 3vw, 1.2rem);
+        font-size: clamp(0.9rem, 3vw, 1.1rem);
       }
       .btn {
-        padding: clamp(10px, 3vw, 12px) clamp(20px, 5vw, 30px);
-        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        padding: clamp(8px, 3vw, 10px) clamp(15px, 5vw, 25px);
+        font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+        min-width: 120px;
       }
       .section-title {
-        font-size: clamp(1.8rem, 4vw, 2.2rem);
+        font-size: clamp(1.6rem, 4vw, 2rem);
       }
       .contact-form {
-        padding: clamp(20px, 4vw, 30px);
+        padding: clamp(15px, 3vw, 20px);
       }
       .service-card .service-image {
-        height: clamp(150px, 25vw, 180px);
+        height: clamp(140px, 20vw, 160px);
       }
       .contact-form .error-message {
-        font-size: clamp(0.75rem, 2vw, 0.85rem);
-        bottom: -18px;
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
+        bottom: -16px;
       }
-    }
-
-    @media (max-width: 400px) {
       .top-bar-left, .top-bar-right {
         flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        gap: 8px;
+        align-items: center;
       }
       .contact-details div {
         flex-direction: column;
         align-items: flex-start;
         gap: 5px;
+      }
+      .feature, .service, .service-card, .client-type, .reason, .testimonial {
+        min-width: 100%;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .logo img {
+        height: clamp(30px, 7vw, 40px);
+      }
+      .mobile-menu-btn {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+      }
+      .header-btn {
+        padding: clamp(6px, 2vw, 8px) clamp(10px, 3vw, 15px);
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
+        min-width: 100px;
+      }
+      .section-title::after {
+        width: 80px;
       }
     }
   </style>
@@ -1183,8 +1247,8 @@
           <li><a href="#who-we-serve">Who We Serve</a></li>
           <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact" class="header-btn">Get Started</a></li>
         </ul>
-        <a href="#contact" class="header-btn">Get Started</a>
       </nav>
     </div>
   </header>
@@ -1555,10 +1619,14 @@
     // Mobile menu toggle
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('nav ul');
+    const body = document.body;
+
     mobileMenuBtn.addEventListener('click', () => {
       const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
       mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
       navMenu.classList.toggle('active');
+      body.classList.toggle('menu-open');
+      mobileMenuBtn.innerHTML = isExpanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
     });
 
     // Smooth scrolling
@@ -1570,6 +1638,8 @@
         document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
         navMenu.classList.remove('active');
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        body.classList.remove('menu-open');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
       });
     });
 
@@ -1622,6 +1692,7 @@
         showError('phone', 'phone-error', 'Please enter a valid phone number.');
         isValid = false;
       }
+      // Validates service selection
       if (!service) {
         showError('service', 'service-error', 'Please select a service.');
         isValid = false;
@@ -1724,6 +1795,8 @@
       if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
         navMenu.classList.remove('active');
         mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        body.classList.remove('menu-open');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
       }
     });
   </script>
