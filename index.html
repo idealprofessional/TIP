@@ -452,16 +452,29 @@ nav ul li a {
     }
 
     /* About Section */
-    #about {
-      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1516321310764-8a238815b3f8?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
-    }
+#about {
+  background: #000000; /* Changed to black background */
+  color: #FFFFFF; /* Changed text color to white */
+  padding: clamp(60px, 10vh, 100px) 0;
+  position: relative;
+}
 
-    #about p {
-      max-width: 700px;
-      margin: 15px auto;
-      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-      color: var(--text-light);
-    }
+#about .section-title {
+  color: #FFFFFF; /* White section title */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+#about p {
+  max-width: 700px;
+  margin: 15px auto;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: #E0E0E0; /* Light gray for paragraph text for better readability */
+}
+
+/* Adjust the section title underline to stand out against black */
+#about .section-title::after {
+  background: linear-gradient(90deg, var(--primary-light), var(--secondary-light));
+}
 
     /* Services Section */
     .services {
