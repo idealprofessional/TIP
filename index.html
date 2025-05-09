@@ -25,23 +25,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
   <style>
-    :root {
-      --primary-color: #00A7B5; /* Teal */
-      --primary-dark: #008C99; /* Darker Teal for gradients */
-      --secondary-color: #FF4D4D; /* Coral Red */
-      --text-color: #333333; /* Dark Gray */
-      --text-light: #666666; /* Medium Gray */
-      --bg-color: #F5F5F5; /* Light Cream */
-      --bg-light: #FFFFFF; /* White */
-      --accent-color: #2D2D2D; /* Charcoal Gray */
-      --error-color: #FF3333; /* Bright Red */
-      --shadow-light: 0 8px 24px rgba(0, 0, 0, 0.1);
-      --shadow-medium: 0 12px 36px rgba(0, 0, 0, 0.15);
-      --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      --border-radius: 12px;
-      --menu-transition: transform 0.3s ease-in-out;
-      --overlay-bg: rgba(0, 0, 0, 0.5);
-    }
+:root {
+  --primary-color: #00A7B5; /* Vibrant teal */
+  --primary-light: #20C5D3; /* Brighter teal for hover */
+  --primary-dark: #007A85; /* Darker teal for depth */
+  --secondary-color: #FF4D4D; /* Vibrant coral red */
+  --secondary-light: #FF6B6B; /* Lighter coral for hover */
+  --text-color: #000000; /* Pure black for text */
+  --text-light: #333333; /* Dark gray for secondary text */
+  --bg-color: #FFFFFF; /* Pure white background */
+  --bg-light: #FFFFFF; /* Pure white */
+  --bg-dark: #000000; /* Pure black for contrast sections */
+  --accent-color: #FFD166; /* Gold accent for highlights */
+  --error-color: #E53E3E; /* Bright red for errors */
+  --success-color: #38A169; /* Green for success */
+  --shadow-light: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 12px 36px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 14px 40px rgba(0, 167, 181, 0.2);
+}
 
     * {
       margin: 0;
@@ -474,6 +475,12 @@ nav ul li a {
 /* Adjust the section title underline to stand out against black */
 #about .section-title::after {
   background: linear-gradient(90deg, var(--primary-light), var(--secondary-light));
+}
+
+    /* Black sections */
+.top-bar, #about, footer {
+  background-color: #000000;
+  color: #FFFFFF;
 }
 
     /* Services Section */
@@ -1093,6 +1100,13 @@ nav ul li a {
       .contact-info {
         order: 2;
       }
+      
+      /* Card styling */
+.feature, .service, .service-card, .client-type, .reason, .testimonial {
+  background-color: #FFFFFF;
+  box-shadow: var(--shadow-light);
+  border: none;
+}
       .features, .services, .service-cards, .client-types, .reasons, .testimonials, .footer-content {
         flex-wrap: wrap;
       }
