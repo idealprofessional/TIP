@@ -106,13 +106,13 @@
 
     /* Header */
 .top-bar {
-  background-color: var(--bg-light);
-  color: var(--text-color); /* Changed from text-light to text-color for better visibility */
+  background-color: #000000; /* Changed to black */
+  color: #FFFFFF; /* Changed text color to white for contrast */
   padding: clamp(8px, 2vw, 12px) 0;
   font-size: clamp(0.85rem, 2vw, 0.95rem);
   position: relative;
   z-index: 1001;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
     .top-bar .container {
@@ -129,17 +129,18 @@
       flex-wrap: wrap;
     }
 
-    .top-bar a {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
+.top-bar a {
+  color: #FFFFFF; /* White text for links */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
 
-    .top-bar a:hover {
-      color: var(--primary-color);
-      transform: translateY(-2px);
-    }
+.top-bar a:hover {
+  color: var(--primary-light); /* Use a lighter color on hover for better visibility */
+  transform: translateY(-2px);
+}
 
     header {
       background-color: var(--bg-light);
