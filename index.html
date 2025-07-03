@@ -3,72 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Ideal Professional offers premium career optimization services including resume writing, LinkedIn optimization, and interview coaching to help you land your dream job.">
-  <meta name="keywords" content="resume writing, LinkedIn optimization, career coaching, job search strategy, interview preparation, personal branding, professional development">
+  <meta name="description" content="The Ideal Professional - Premium career optimization services to help you stand out, get noticed, and land your dream job.">
+  <meta name="keywords" content="resume writing, LinkedIn optimization, career services, job search, interview coaching, personal branding">
   <meta name="author" content="The Ideal Professional">
-  <meta name="robots" content="index, follow">
   <meta property="og:title" content="The Ideal Professional | Career Optimization Services">
-  <meta property="og:description" content="Elevate your career with expert resume writing, LinkedIn optimization, and personalized career coaching.">
-  <meta property="og:image" content="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.webp">
-  <meta property="og:url" content="https://idealprofessional.github.io">
-  <meta property="og:type" content="website">
+  <meta property="og:description" content="Elevate your career with our expert resume writing, LinkedIn optimization, and career coaching services.">
+  <meta property="og:image" content="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.svg">
+  <meta property="og:url" content="https://yourwebsite.com">
   <title>The Ideal Professional | Career Optimization Services</title>
 
   <!-- Favicon -->
-  <link rel="icon" type="image/webp" href="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.webp">
-  <link rel="apple-touch-icon" href="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.webp">
+  <link rel="icon" type="image/png" href="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.svg">
 
   <!-- Preload Critical Assets -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
-  <!-- Structured Data for SEO -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "The Ideal Professional",
-      "url": "https://idealprofessional.github.io",
-      "logo": "https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.webp",
-      "contactPoint": [
-        {
-          "@type": "ContactPoint",
-          "telephone": "+44-7435-344535",
-          "contactType": "customer service",
-          "email": "consultation@theidealprofessional.com",
-          "areaServed": "GB",
-          "availableLanguage": "English"
-        }
-      ],
-      "sameAs": [
-        "https://www.facebook.com/theidealprofessional",
-        "https://www.linkedin.com/company/theidealprofessional",
-        "https://www.twitter.com/idealpro_uk",
-        "https://www.instagram.com/theidealprofessional"
-      ],
-      "description": "The Ideal Professional provides expert resume writing, LinkedIn optimization, and career coaching services to help professionals land their dream jobs."
-    }
-  </script>
-
   <style>
-    :root {
-      --primary-color: #007A85; /* Vibrant teal */
-      --primary-light: #20C5D3; /* Brighter teal for hover */
-      --secondary-color: #FF4D4D; /* Vibrant coral red */
-      --text-color: #1A1A1A; /* Darker text for readability */
-      --text-light: #4A4A4A; /* Secondary text */
-      --bg-color: #FFFFFF; /* White background */
-      --shadow-light: 0 4px 16px rgba(0, 0, 0, 0.1);
-      --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.15);
-      --transition: all 0.3s ease;
-      --border-radius: 8px;
-      --border-radius-sm: 4px;
-    }
+:root {
+  --primary-color: #007A85; /* Vibrant teal */
+  --primary-light: #20C5D3; /* Brighter teal for hover */
+  --primary-dark: #007A85; /* Darker teal for depth */
+  --secondary-color: #000000; /* Vibrant coral red */
+  --secondary-light: #FF6B6B; /* Lighter coral for hover */
+  --text-color: #000000; /* Pure black for text */
+  --text-light: #333333; /* Dark gray for secondary text */
+  --bg-color: #FFFFFF; /* Pure white background */
+  --bg-light: #FFFFFF; /* Pure white */
+  --bg-dark: #000000; /* Pure black for contrast sections */
+  --accent-color: #FFD166; /* Gold accent for highlights */
+  --error-color: #E53E3E; /* Bright red for errors */
+  --success-color: #38A169; /* Green for success */
+  --shadow-light: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-medium: 0 12px 36px rgba(0, 0, 0, 0.15);
+  --shadow-hover: 0 14px 40px rgba(0, 167, 181, 0.2);
+}
 
     * {
       margin: 0;
@@ -78,17 +52,18 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
       line-height: 1.7;
       background-color: var(--bg-color);
       color: var(--text-color);
-      font-size: clamp(16px, 2.2vw, 18px);
+      overflow-x: hidden;
+      font-size: clamp(16px, 2.5vw, 18px);
     }
 
     img {
       max-width: 100%;
       height: auto;
-      display: block;
+      transition: var(--transition);
     }
 
     a {
@@ -99,60 +74,78 @@
 
     .container {
       width: 90%;
-      max-width: 1200px;
+      max-width: 1400px;
       margin: auto;
-      padding: 0 clamp(15px, 4vw, 20px);
+      padding: 0 clamp(10px, 5vw, 20px);
     }
 
     /* Animations */
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(100%); }
+      to { transform: translateX(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .animate-on-scroll {
       opacity: 0;
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      transform: translateY(30px);
+      transition: var(--transition);
     }
 
     .animate-on-scroll.visible {
-      opacity: 1;
-      transform: translateY(0);
       animation: fadeInUp 0.8s ease-out forwards;
     }
 
     /* Header */
-    .top-bar {
-      background-color: #000000;
-      color: #FFFFFF;
-      padding: clamp(8px, 2vw, 12px) 0;
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
+.top-bar {
+  background-color: #000000; /* Changed to black */
+  color: #FFFFFF; /* Changed text color to white for contrast */
+  padding: clamp(8px, 2vw, 12px) 0;
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  position: relative;
+  z-index: 1001;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
 
     .top-bar .container {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 10px;
     }
 
-    .top-bar a {
-      color: #FFFFFF;
+    .top-bar-left, .top-bar-right {
       display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: color 0.3s ease;
+      gap: clamp(10px, 3vw, 15px);
+      flex-wrap: wrap;
     }
 
-    .top-bar a:hover, .top-bar a:focus {
-      color: var(--primary-light);
-    }
+.top-bar a {
+  color: #FFFFFF; /* White text for links */
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.top-bar a:hover {
+  color: var(--primary-light); /* Use a lighter color on hover for better visibility */
+  transform: translateY(-2px);
+}
 
     header {
-      background-color: var(--bg-color);
-      padding: clamp(12px, 2vw, 16px) 0;
+      background-color: var(--bg-light);
+      padding: clamp(10px, 2vw, 15px) 0;
       box-shadow: var(--shadow-light);
       position: sticky;
       top: 0;
@@ -163,48 +156,52 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .logo img {
-      height: clamp(45px, 8vw, 55px);
+      height: clamp(40px, 8vw, 50px);
       width: auto;
       transition: transform 0.3s ease;
     }
 
-    .logo img:hover, .logo img:focus {
-      transform: scale(1.05);
+    .logo img:hover {
+      transform: scale(1.1);
     }
 
     nav ul {
       list-style: none;
       display: flex;
-      gap: clamp(20px, 3vw, 30px);
+      gap: clamp(15px, 3vw, 25px);
       margin: 0;
       padding: 0;
     }
 
-    nav ul li a {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: clamp(0.9rem, 2vw, 1rem);
-      text-transform: uppercase;
-      padding: 8px 0;
-      position: relative;
-    }
+nav ul li a {
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  position: relative;
+  padding: 8px 0;
+  display: block;
+  letter-spacing: 0.5px; /* Added letter spacing for better readability */
+}
 
     nav ul li a::after {
       content: '';
       position: absolute;
       width: 0;
-      height: 2px;
-      background: var(--primary-color);
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
       bottom: 0;
       left: 0;
       transition: width 0.3s ease;
     }
 
-    nav ul li a:hover::after, nav ul li a:focus::after {
+    nav ul li a:hover::after {
       width: 100%;
     }
 
@@ -212,27 +209,53 @@
       display: none;
       background: none;
       border: none;
-      font-size: 1.8rem;
+      font-size: clamp(1.5rem, 4vw, 1.8rem);
       color: var(--text-color);
       cursor: pointer;
-      padding: 8px;
+      z-index: 1002;
+      transition: color 0.3s ease;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--primary-color);
     }
 
     .header-btn {
-      background: var(--primary-color);
-      color: #FFFFFF;
-      padding: clamp(10px, 2vw, 12px) clamp(20px, 3vw, 25px);
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--bg-light);
+      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       text-transform: uppercase;
-      transition: var(--transition);
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      box-shadow: var(--shadow-light);
+      position: relative;
+      overflow: hidden;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      text-align: center;
+      min-width: 120px;
     }
 
-    .header-btn:hover, .header-btn:focus {
-      background: var(--primary-light);
-      transform: translateY(-2px);
+    .header-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .header-btn:hover::before {
+      left: 100%;
+    }
+
+    .header-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-medium);
     }
 
     /* Mobile Menu Overlay */
@@ -242,7 +265,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.6);
+      background-color: var(--overlay-bg);
       z-index: 999;
       opacity: 0;
       visibility: hidden;
@@ -256,160 +279,255 @@
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1920&q=80&format=webp') center/cover no-repeat;
-      color: #FFFFFF;
-      text-align: center;
-      padding: clamp(100px, 15vh, 140px) 20px;
-      min-height: 70vh;
-      position: relative;
-    }
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.3)), /* Darker overlay for better contrast */
+              url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+  color: var(--bg-light); /* Changed text color to white for better contrast against darker background */
+  text-align: center;
+  padding: clamp(80px, 12vh, 120px) 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 60vh;
+}
 
-    .hero h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(2rem, 6vw, 3.5rem);
-      font-weight: 700;
-      margin-bottom: 20px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 70%);
+  z-index: 1;
+}
 
-    .hero p {
-      font-size: clamp(1.1rem, 3vw, 1.4rem);
-      max-width: 700px;
-      margin: 0 auto 30px;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-    }
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 25px;
+  animation: fadeInUp 1s ease-out;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3); /* Enhanced text shadow for better readability */
+  color: var(--bg-light);
+}
 
+.hero p {
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  margin-bottom: 40px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeInUp 1.2s ease-out;
+  color: var(--bg-light);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3); /* Added text shadow for better readability */
+  font-weight: 400;
+}
     .btn {
-      background: var(--primary-color);
+      background: linear-gradient(135deg, #00A7B5, #007A85);
       color: #FFFFFF;
-      padding: clamp(12px, 3vw, 15px) clamp(25px, 5vw, 35px);
+      padding: clamp(10px, 3vw, 14px) clamp(25px, 5vw, 35px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
       text-transform: uppercase;
-      transition: var(--transition);
-      font-size: clamp(0.9rem, 2.5vw, 1rem);
+      box-shadow: var(--shadow-light);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;;
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
       display: inline-block;
+      min-width: 150px;
+      text-align: center;
     }
 
-    .btn:hover, .btn:focus {
-      background: var(--primary-light);
-      transform: translateY(-3px);
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-medium);
     }
 
     .btn.secondary {
       background: transparent;
-      border: 2px solid #FFFFFF;
-      margin-left: 15px;
+      border: 3px solid var(--primary-color);
+      color: var(--primary-color);
+      margin-left: clamp(10px, 2vw, 15px);
     }
 
-    .btn.secondary:hover, .btn.secondary:focus {
-      background: #FFFFFF;
-      color: var(--primary-color);
+    .btn.secondary:hover {
+      background: var(--primary-color);
+      color: var(--bg-light);
+      border-color: transparent;
     }
 
     /* Sections */
     section {
-      padding: clamp(80px, 12vh, 120px) 0;
+      padding: clamp(60px, 10vh, 100px) 0;
+      position: relative;
+      min-height: 50vh;
     }
 
     .section-title {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      font-weight: 700;
       text-align: center;
-      margin-bottom: 40px;
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 50px;
+      color: var(--text-color);
       position: relative;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
     .section-title::after {
       content: '';
       position: absolute;
-      bottom: -8px;
+      bottom: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: var(--primary-color);
+      width: 100px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
       border-radius: 2px;
+    }
+
+    .section-intro, .section-outro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--text-light);
     }
 
     /* Features Section */
     .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      display: flex;
+      justify-content: center;
+      gap: clamp(15px, 3vw, 25px);
+      flex-wrap: wrap;
     }
 
     .feature {
-      background: #FFFFFF;
-      padding: 25px;
+      background-color: var(--bg-light);
+      padding: clamp(15px, 3vw, 25px);
       border-radius: var(--border-radius);
+      box-shadow: var(--shadow-light);
       text-align: center;
       transition: var(--transition);
+      flex: 1;
+      min-width: clamp(250px, 45vw, 300px);
+      max-width: 350px;
     }
 
     .feature:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px) scale(1.02);
       box-shadow: var(--shadow-medium);
     }
 
     .feature i {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 5vw, 3rem);
       color: var(--primary-color);
       margin-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .feature:hover i {
+      transform: scale(1.1);
     }
 
     .feature h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.4rem, 3vw, 1.6rem);
+      font-size: clamp(1.3rem, 3vw, 1.5rem);
       margin-bottom: 10px;
     }
 
     /* About Section */
-    #about {
-      background: #000000;
-      color: #FFFFFF;
-      padding: clamp(80px, 12vh, 120px) 0;
-    }
+#about {
+  background: #000000; /* Changed to black background */
+  color: #FFFFFF; /* Changed text color to white */
+  padding: clamp(60px, 10vh, 100px) 0;
+  position: relative;
+}
 
-    #about .section-title {
-      color: #FFFFFF;
-    }
+#about .section-title {
+  color: #FFFFFF; /* White section title */
+  text-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
 
-    #about .section-title::after {
-      background: var(--primary-light);
-    }
+#about p {
+  max-width: 700px;
+  margin: 15px auto;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  color: #E0E0E0; /* Light gray for paragraph text for better readability */
+}
 
-    #about p {
-      max-width: 800px;
-      margin: 20px auto;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      color: #E0E0E0;
-    }
+/* Adjust the section title underline to stand out against black */
+#about .section-title::after {
+  background: linear-gradient(90deg, var(--primary-light), var(--secondary-light));
+}
+
+    /* Black sections */
+.top-bar, #about, footer {
+  background-color: #000000;
+  color: #FFFFFF;
+}
 
     /* Services Section */
     .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 20px;
+      display: flex;
+      justify-content: center;
+      gap: clamp(15px, 3vw, 25px);
+      flex-wrap: wrap;
     }
 
     .service {
-      background: #FFFFFF;
-      padding: 30px;
+      background-color: var(--bg-light);
+      padding: clamp(20px, 4vw, 30px);
       border-radius: var(--border-radius);
+      box-shadow: var(--shadow-light);
       text-align: center;
+      position: relative;
+      overflow: hidden;
       transition: var(--transition);
+      flex: 1;
+      min-width: clamp(240px, 45vw, 280px);
+      max-width: 320px;
+    }
+
+    .service::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .service:hover::before {
+      transform: scaleX(1);
     }
 
     .service:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-medium);
     }
 
     .service i {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 5vw, 3rem);
       color: var(--primary-color);
       margin-bottom: 15px;
     }
@@ -422,137 +540,351 @@
 
     /* What We Offer Section */
     .service-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      display: flex;
+      justify-content: center;
+      gap: clamp(15px, 3vw, 25px);
+      flex-wrap: wrap;
     }
 
     .service-card {
-      background: #FFFFFF;
+      background-color: var(--bg-light);
       border-radius: var(--border-radius);
       overflow: hidden;
+      box-shadow: var(--shadow-light);
       transition: var(--transition);
+      flex: 1;
+      min-width: clamp(260px, 45vw, 300px);
+      max-width: 340px;
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-8px);
       box-shadow: var(--shadow-medium);
     }
 
     .service-image {
       width: 100%;
-      height: 180px;
+      height: clamp(160px, 25vw, 200px);
       object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-image {
+      transform: scale(1.05);
     }
 
     .service-info {
-      padding: 20px;
+      padding: clamp(15px, 3vw, 20px);
     }
 
     .service-info h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.3rem, 3vw, 1.5rem);
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
       margin-bottom: 10px;
     }
 
     .service-btn {
-      background: var(--primary-color);
-      color: #FFFFFF;
-      padding: 10px 20px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--bg-light);
+      padding: clamp(8px, 2vw, 10px) clamp(15px, 3vw, 20px);
       border-radius: var(--border-radius);
       font-family: 'Poppins', sans-serif;
       font-weight: 600;
-      font-size: 0.9rem;
-      transition: var(--transition);
+      text-transform: uppercase;
+      display: inline-block;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
     }
 
-    .service-btn:hover, .service-btn:focus {
-      background: var(--primary-light);
-      transform: translateY(-2px);
+    .service-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    /* Who We Serve Section */
+    .client-types {
+      display: flex;
+      justify-content: center;
+      gap: clamp(15px, 3vw, 25px);
+      flex-wrap: wrap;
+    }
+
+    .client-type {
+      background-color: var(--bg-light);
+      padding: clamp(15px, 3vw, 25px);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-light);
+      text-align: center;
+      transition: var(--transition);
+      flex: 1;
+      min-width: clamp(220px, 45vw, 260px);
+      max-width: 280px;
+    }
+
+    .client-type:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .client-type i {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .client-type h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      margin-bottom: 10px;
+    }
+
+    /* Why Choose Us Section */
+    .reasons {
+      display: flex;
+      justify-content: center;
+      gap: clamp(15px, 3vw, 25px);
+      flex-wrap: wrap;
+    }
+
+    .reason {
+      background-color: var(--bg-light);
+      padding: clamp(15px, 3vw, 25px);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-light);
+      text-align: center;
+      flex: 1;
+      min-width: clamp(240px, 45vw, 280px);
+      max-width: 300px;
+    }
+
+    .reason:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .reason i {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    .reason h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      margin-bottom: 10px;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      display: flex;
+      justify-content: center;
+      gap: clamp(15px, 3vw, 25px);
+      flex-wrap: wrap;
+    }
+
+    .testimonial {
+      background-color: var(--bg-light);
+      padding: clamp(15px, 3vw, 25px);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-light);
+      position: relative;
+      transition: var(--transition);
+      flex: 1;
+      min-width: clamp(260px, 45vw, 300px);
+      max-width: 340px;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .testimonial:before {
+      content: '\201C';
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(3rem, 8vw, 5rem);
+      color: var(--primary-color);
+      opacity: 0.15;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+    }
+
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-image {
+      width: clamp(40px, 10vw, 50px);
+      height: clamp(40px, 10vw, 50px);
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 10px;
+      border: 2px solid var(--primary-color);
+    }
+
+    .testimonial-info h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      margin-bottom: 5px;
+    }
+
+    .testimonial-info p {
+      color: var(--text-light);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+    }
+
+    .testimonial p {
+      font-style: italic;
+      color: var(--text-light);
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    }
+
+    .testimonial-rating {
+      color: #FFD700;
+      margin-top: 10px;
+    }
+
+    /* CTA Section */
+    .cta {
+      background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)), url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1951&q=80') center/cover no-repeat;
+      color: var(--text-color);
+      text-align: center;
+      padding: clamp(80px, 12vh, 120px) 20px;
+      position: relative;
+      min-height: 50vh;
+    }
+
+    .cta h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      margin-bottom: 25px;
+    }
+
+    .cta p {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      margin-bottom: 35px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     /* Contact Section */
     .contact-container {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
+      gap: clamp(20px, 4vw, 40px);
+      align-items: start;
     }
 
     .contact-info h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.8rem, 3vw, 2.2rem);
-      color: var(--primary-color);
+      font-size: clamp(1.6rem, 3vw, 2rem);
       margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+
+    .contact-info p {
+      font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+      color: var(--text-light);
+      margin-bottom: 25px;
     }
 
     .contact-details div {
       display: flex;
       align-items: center;
       margin-bottom: 15px;
-      font-size: clamp(0.95rem, 2vw, 1.1rem);
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
     }
 
     .contact-details i {
       color: var(--primary-color);
-      font-size: 1.3rem;
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
       margin-right: 10px;
+      width: 20px;
     }
 
-    .contact-form {
-      background: #F8F9FA;
-      padding: 30px;
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-light);
-    }
+.contact-form {
+  background: var(--form-bg);
+  padding: clamp(25px, 5vw, 35px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-light);
+  font-family: 'Inter', sans-serif;
+  position: relative;
+  overflow: hidden;
+  border: var(--card-border);
+}
 
-    .form-group {
-      margin-bottom: 20px;
-    }
+.contact-form::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
 
-    .form-group label {
-      display: block;
-      font-weight: 500;
-      margin-bottom: 8px;
-      font-size: clamp(0.9rem, 2vw, 1rem);
-    }
+.form-group {
+  margin-bottom: 22px;
+  position: relative;
+}
 
-    .contact-form input,
-    .contact-form select,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #E0E0E0;
-      border-radius: var(--border-radius-sm);
-      font-size: clamp(0.9rem, 2vw, 1rem);
-      transition: var(--transition);
-    }
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
 
-    .contact-form input:focus,
-    .contact-form select:focus,
-    .contact-form textarea:focus {
-      border-color: var(--primary-color);
-      box-shadow: 0 0 0 3px rgba(0, 122, 133, 0.2);
-      outline: none;
-    }
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: clamp(12px, 2.5vw, 14px) clamp(15px, 3vw, 18px);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--border-radius-sm);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  transition: all 0.3s ease;
+}
 
-    .contact-form button {
-      background: var(--primary-color);
-      color: #FFFFFF;
-      padding: 12px;
-      border: none;
-      border-radius: var(--border-radius);
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      font-size: clamp(0.9rem, 2vw, 1rem);
-      cursor: pointer;
-      transition: var(--transition);
-      width: 100%;
-    }
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(44,125,140,0.15);
+  outline: none;
+}
 
-    .contact-form button:hover, .contact-form button:focus {
-      background: var(--primary-light);
-      transform: translateY(-2px);
-    }
+.contact-form button {
+  width: 100%;
+  padding: clamp(12px, 2.5vw, 15px);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--bg-light);
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  letter-spacing: 0.5px;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  background: linear-gradient(135deg, var(--primary-light), var(--secondary-light));
+}
 
     .contact-form .mailto-btn,
     .contact-form .copy-btn {
@@ -560,17 +892,20 @@
     }
 
     .contact-form .mailto-instructions {
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
       color: var(--text-light);
-      margin: 15px 0;
+      margin: 10px 0;
       text-align: center;
     }
 
     .contact-form .error-message {
-      color: #E53E3E;
-      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      color: var(--error-color);
+      font-size: clamp(0.75rem, 2vw, 0.85rem);
       margin-top: 5px;
       display: none;
+      position: absolute;
+      bottom: -18px;
+      left: 0;
     }
 
     .contact-form .error-message.active {
@@ -578,16 +913,16 @@
     }
 
     .contact-form .form-error {
-      border-color: #E53E3E;
+      box-shadow: 0 0 6px var(--error-color);
     }
 
     .contact-form .form-success {
-      background: #E6F4EA;
-      padding: 15px;
+      background-color: var(--bg-light);
+      padding: clamp(10px, 2vw, 15px);
       border-radius: var(--border-radius);
       text-align: center;
       color: var(--primary-color);
-      font-size: clamp(0.9rem, 2vw, 1rem);
+      font-size: clamp(0.9rem, 2.5vw, 1rem);
       margin-top: 15px;
       display: none;
     }
@@ -596,23 +931,60 @@
       display: block;
     }
 
+    .contact-form .fallback-link {
+      margin-top: 15px;
+      font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+      color: var(--text-light);
+      text-align: center;
+    }
+
+    .contact-form .fallback-link a {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
+    .contact-form .fallback-link a:hover {
+      color: var(--secondary-color);
+    }
+
     /* Footer */
     footer {
-      background: #000000;
-      color: #FFFFFF;
-      padding: clamp(60px, 10vh, 80px) 0 20px;
+      background-color: var(--bg-light);
+      color: var(--text-light);
+      padding: clamp(50px, 8vh, 70px) 0 25px;
+      position: relative;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
     }
 
     .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
+      display: flex;
+      justify-content: center;
+      gap: clamp(15px, 4vw, 30px);
+      flex-wrap: wrap;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: clamp(200px, 45vw, 240px);
+      max-width: 280px;
     }
 
     .footer-column h3 {
       font-family: 'Poppins', sans-serif;
-      font-size: clamp(1.3rem, 3vw, 1.5rem);
+      font-size: clamp(1.2rem, 3vw, 1.4rem);
+      color: var(--text-color);
       margin-bottom: 15px;
+      position: relative;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--primary-color);
     }
 
     .footer-column ul {
@@ -623,15 +995,23 @@
       margin-bottom: 10px;
     }
 
-    .footer-column ul li a:hover, .footer-column ul li a:focus {
-      color: var(--primary-light);
+    .footer-column ul li a:hover {
+      color: var(--primary-color);
+      transform: translateX(5px);
+      display: inline-block;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
     }
 
     .social-links a {
-      color: #FFFFFF;
-      background: var(--primary-color);
-      width: 40px;
-      height: 40px;
+      color: var(--text-color);
+      background: #E8ECEF;
+      width: clamp(35px, 7vw, 40px);
+      height: clamp(35px, 7vw, 40px);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -639,17 +1019,74 @@
       transition: var(--transition);
     }
 
-    .social-links a:hover, .social-links a:focus {
-      background: var(--primary-light);
-      transform: translateY(-3px);
+    .social-links a:hover {
+      background: var(--primary-color);
+      color: var(--bg-light);
+      transform: translateY(-3px) rotate(5deg);
     }
 
     .footer-bottom {
       text-align: center;
       margin-top: 30px;
-      border-top: 1px solid #333333;
+      border-top: 1px solid #E8ECEF;
       padding-top: 15px;
-      font-size: clamp(0.85rem, 2vw, 0.95rem);
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+    }
+
+    /* Cookie Banner */
+    .cookie-banner {
+      position: fixed;
+      bottom: 15px;
+      left: 15px;
+      right: 15px;
+      background-color: var(--bg-light);
+      padding: clamp(10px, 2vw, 15px);
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      display: none;
+    }
+
+    .cookie-text h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: var(--text-color);
+      margin-bottom: 5px;
+    }
+
+    .cookie-text p {
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      color: var(--text-light);
+    }
+
+    .cookie-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .cookie-btn {
+      padding: clamp(6px, 2vw, 8px) clamp(12px, 3vw, 15px);
+      border-radius: var(--border-radius);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: clamp(0.8rem, 2vw, 0.9rem);
+      cursor: pointer;
+    }
+
+    .cookie-btn.accept {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: var(--bg-light);
+      border: none;
+    }
+
+    .cookie-btn.settings {
+      background: transparent;
+      border: 2px solid var(--text-light);
+      color: var(--text-light);
     }
 
     /* Responsive Design */
@@ -657,62 +1094,220 @@
       .contact-container {
         grid-template-columns: 1fr;
       }
+      .contact-form {
+        order: 1;
+      }
+      .contact-info {
+        order: 2;
+      }
+      
+      /* Card styling */
+.feature, .service, .service-card, .client-type, .reason, .testimonial {
+  background-color: #FFFFFF;
+  box-shadow: var(--shadow-light);
+  border: none;
+}
+      .features, .services, .service-cards, .client-types, .reasons, .testimonials, .footer-content {
+        flex-wrap: wrap;
+      }
+      .feature, .service, .service-card, .client-type, .reason, .testimonial, .footer-column {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: clamp(1.6rem, 5vw, 2.5rem);
+      }
+      .hero p {
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
+      }
+      .section-title {
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+      }
+      .top-bar .container {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
     }
 
     @media (max-width: 768px) {
       .mobile-menu-btn {
         display: block;
       }
-
+      nav {
+        position: relative;
+        flex-wrap: nowrap;
+      }
       nav ul {
         position: fixed;
         top: 0;
-        right: 0;
-        width: 280px;
+        right: 0; /* Changed from left: 0 to right: 0 */
+        width: 80%; /* Set specific width instead of right: 0 */
+        max-width: 350px; /* Maximum width for larger screens */
         height: 100%;
-        background: #FFFFFF;
+        background-color: var(--bg-light);
         flex-direction: column;
-        padding: 80px 20px;
+        padding: clamp(80px, 15vh, 100px) 20px;
         transform: translateX(100%);
-        transition: transform 0.3s ease;
+        transition: var(--menu-transition);
         z-index: 1001;
+        justify-content: flex-start; /* Changed from center */
+        align-items: center;
+        overflow-y: auto;
+        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
       }
-
       nav ul.active {
         transform: translateX(0);
+        animation: slideInRight 0.3s ease-out;
       }
-
+      nav ul li {
+        margin: 15px 0;
+        width: 100%; /* Full width for better touch targets */
+      }
+      nav ul li a {
+        font-size: clamp(1.1rem, 3vw, 1.3rem);
+        padding: 12px;
+        width: 100%;
+        text-align: center;
+        display: block; /* Ensure full width */
+      }
       .header-btn {
+        display: block;
         margin: 20px auto;
         width: 80%;
+        max-width: 250px;
+        align-self: center;
+        font-size: clamp(0.9rem, 2.5vw, 1rem);
       }
-
       .hero {
-        padding: clamp(80px, 12vh, 100px) 15px;
-        min-height: 60vh;
+        padding: clamp(60px, 10vh, 100px) 15px;
+        min-height: 50vh;
       }
-
       .hero h1 {
-        font-size: clamp(1.8rem, 5vw, 2.5rem);
+        font-size: clamp(1.4rem, 5vw, 2.2rem);
       }
-
-      .features, .services, .service-cards {
-        grid-template-columns: 1fr;
+      .cookie-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+        padding: clamp(15px, 3vw, 20px);
+      }
+      .btn.secondary {
+        margin-left: 0;
+        margin-top: 15px;
+      }
+      body.menu-open {
+        overflow: hidden;
+      }
+      .features, .services, .service-cards, .client-types, .reasons, .testimonials {
+        flex-direction: column;
+        align-items: center;
+      }
+      .feature, .service, .service-card, .client-type, .reason, .testimonial {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
       }
     }
 
     @media (max-width: 576px) {
       .hero h1 {
-        font-size: clamp(1.6rem, 5vw, 2rem);
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
       }
-
+      .hero p {
+        font-size: clamp(0.85rem, 3vw, 1rem);
+      }
       .btn {
-        padding: clamp(10px, 3vw, 12px) clamp(20px, 5vw, 30px);
-        font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+        padding: clamp(8px, 3vw, 10px) clamp(15px, 5vw, 25px);
+        font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+        min-width: 120px;
       }
-
+      .section-title {
+        font-size: clamp(1.4rem, 4vw, 1.8rem);
+      }
       .contact-form {
-        padding: 20px;
+        padding: clamp(15px, 3vw, 20px);
+      }
+      .service-card .service-image {
+        height: clamp(120px, 20vw, 140px);
+      }
+      .contact-form .error-message {
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
+        bottom: -16px;
+      }
+      .top-bar-left, .top-bar-right {
+        flex-direction: column;
+        gap: 8px;
+        align-items: center;
+        text-align: center;
+      }
+      .contact-details div {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+        text-align: left;
+      }
+      .feature, .service, .service-card, .client-type, .reason, .testimonial {
+        min-width: 100%;
+        padding: clamp(12px, 3vw, 20px);
+      }
+      .section-title::after {
+        width: 80px;
+      }
+      .cookie-buttons {
+        flex-direction: column;
+        width: 100%;
+      }
+      .cookie-btn {
+        width: 100%;
+        text-align: center;
+      }
+      nav ul {
+        width: 100%; /* Full width on very small screens */
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .logo img {
+        height: clamp(30px, 7vw, 40px);
+      }
+      .mobile-menu-btn {
+        font-size: clamp(1.2rem, 4vw, 1.5rem);
+      }
+      .header-btn {
+        padding: clamp(6px, 2vw, 8px) clamp(10px, 3vw, 15px);
+        font-size: clamp(0.7rem, 2vw, 0.8rem);
+        min-width: 100px;
+        width: 100%;
+      }
+      .hero {
+        padding: clamp(50px, 8vh, 80px) 10px;
+      }
+      .section-title::after {
+        width: 60px;
+      }
+      .btn {
+        min-width: 100px;
+      }
+    }
+
+    /* Touch optimizations */
+    @media (hover: none) {
+      .btn:hover, .header-btn:hover, .service-btn:hover, .service:hover, .feature:hover, .service-card:hover, .client-type:hover, .reason:hover, .testimonial:hover, .social-links a:hover, .top-bar a:hover, .footer-column ul li a:hover {
+        transform: none;
+        box-shadow: var(--shadow-light);
+      }
+      .btn::before, .header-btn::before, .service-btn::before, .service::before {
+        display: none;
+      }
+      nav ul li a {
+        padding: 15px; /* Larger touch targets for mobile */
+      }
+      .mobile-menu-btn {
+        padding: 10px; /* Larger touch target */
       }
     }
   </style>
@@ -722,11 +1317,11 @@
   <div class="top-bar">
     <div class="container">
       <div class="top-bar-left">
-        <a href="#" aria-label="Our locations"><i class="fas fa-map-marker-alt"></i> London & Birmingham, UK</a>
-        <a href="tel:+447435344535" aria-label="Call us"><i class="fas fa-phone"></i> +44 7435 344535</a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> London & Birmingham, UK</a>
+        <a href="tel:+447435344535"><i class="fas fa-phone"></i> +44 7435 344535</a>
       </div>
       <div class="top-bar-right">
-        <a href="mailto:consultation@theidealprofessional.com" aria-label="Email us"><i class="fas fa-envelope"></i> consultation@theidealprofessional.com</a>
+        <a href="mailto:consultation@theidealprofessional.com"><i class="fas fa-envelope"></i> consultation@theidealprofessional.com</a>
       </div>
     </div>
   </div>
@@ -736,8 +1331,8 @@
     <div class="container">
       <nav>
         <div class="logo">
-          <a href="#" aria-label="The Ideal Professional Home">
-            <img src="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.webp" alt="The Ideal Professional Logo" loading="lazy">
+          <a href="#">
+            <img src="https://idealprofessional.github.io/tip_logo/images/TIP_NEW_logo.svg" alt="The Ideal Professional Logo">
           </a>
         </div>
         <button class="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -746,6 +1341,8 @@
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#about">About</a></li>
+          <li><a href="#who-we-serve">Who We Serve</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
           <li><a href="#contact">Contact</a></li>
           <li><a href="#contact" class="header-btn">Get Started</a></li>
         </ul>
@@ -759,10 +1356,10 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container">
-      <h1 class="animate-on-scroll">Stand Out. Get Noticed. Land Your Dream Job.</h1>
-      <p class="animate-on-scroll">Expert resume writing, LinkedIn optimization, and career coaching to fast-track your success.</p>
-      <a href="#contact" class="btn animate-on-scroll">Get Started</a>
-      <a href="#services" class="btn secondary animate-on-scroll">Learn More</a>
+      <h1>Stand Out. Get Noticed. Land Your Dream Job.</h1>
+      <p>We optimize your resume, LinkedIn, and career visibility to fast-track your success.</p>
+      <a href="#contact" class="btn">Get Started Today</a>
+      <a href="#services" class="btn secondary">Learn More</a>
     </div>
   </section>
 
@@ -773,17 +1370,17 @@
         <div class="feature animate-on-scroll">
           <i class="fas fa-chart-line"></i>
           <h3>Boost Your Career</h3>
-          <p>Strategic career planning to help you achieve your professional goals faster.</p>
+          <p>Strategic career planning and optimization to help you reach your professional goals faster.</p>
         </div>
         <div class="feature animate-on-scroll">
           <i class="fas fa-file-alt"></i>
           <h3>ATS-Optimized Resumes</h3>
-          <p>Resumes crafted to pass automated screening systems and impress hiring managers.</p>
+          <p>Get past the automated screening systems and into the hands of hiring managers with our expert resume services.</p>
         </div>
         <div class="feature animate-on-scroll">
           <i class="fas fa-handshake"></i>
           <h3>Expert Guidance</h3>
-          <p>Work with industry experts who understand today's competitive job market.</p>
+          <p>Work with industry professionals who understand what employers are looking for in today's competitive market.</p>
         </div>
       </div>
     </div>
@@ -793,8 +1390,10 @@
   <section id="about">
     <div class="container">
       <h2 class="section-title animate-on-scroll">Who We Are</h2>
-      <p class="animate-on-scroll">At The Ideal Professional, we empower professionals to stand out in the competitive job market with tailored career services.</p>
-      <p class="animate-on-scroll">From resume optimization to LinkedIn enhancement and interview coaching, we provide the tools and strategies to help you succeed.</p>
+      <p class="animate-on-scroll">At The Ideal Professional, we believe that every individual is a brand with the potential to stand out in the competitive labor market. Our mission is to equip professionals with the right tools, strategies, and confidence to secure career opportunities and thrive in their chosen fields.</p>
+      <p class="animate-on-scroll">Whether you're starting a new career, transitioning into a new role, or seeking to elevate your professional presence, we provide expert services designed to help you get noticed by recruiters and hiring managers.</p>
+      <p class="animate-on-scroll">The Ideal Professional is more than just a career service—it's a personal branding and career acceleration platform designed to help professionals gain visibility in the labor market, strategically position themselves for success, and navigate their career journey with confidence.</p>
+      <p class="animate-on-scroll">We don't just tell you what you need; we equip, empower, and guide you step by step to becoming the professional you aspire to be.</p>
     </div>
   </section>
 
@@ -805,18 +1404,190 @@
       <div class="services">
         <div class="service animate-on-scroll">
           <i class="fas fa-file-alt"></i>
-          <h3>Resume Optimization</h3>
-          <p>ATS-friendly resumes that highlight your strengths and get noticed.</p>
+          <h3>Resume Writing & Optimization</h3>
+          <p>Crafting ATS-friendly resumes that highlight your strengths and get you noticed by employers.</p>
         </div>
         <div class="service animate-on-scroll">
           <i class="fab fa-linkedin"></i>
-          <h3>LinkedIn Enhancement</h3>
-          <p>Optimize your LinkedIn profile to attract recruiters and employers.</p>
+          <h3>LinkedIn & Social Profile Enhancement</h3>
+          <p>Positioning you as a top candidate in your industry with an optimized professional online presence.</p>
         </div>
         <div class="service animate-on-scroll">
           <i class="fas fa-comments"></i>
-          <h3>Interview Coaching</h3>
-          <p>Build confidence and ace interviews with personalized coaching.</p>
+          <h3>Interview Coaching & Career Strategy</h3>
+          <p>Helping you ace interviews with confidence and develop a winning career advancement plan.</p>
+        </div>
+        <div class="service animate-on-scroll">
+          <i class="fas fa-search"></i>
+          <h3>Job Search Consultation & Strategy</h3>
+          <p>Creating tailored job search strategies to help you find and secure the right opportunities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Offer Section -->
+  <section>
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">What We Offer</h2>
+      <div class="service-cards">
+        <div class="service-card animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=60" alt="Career Visibility" loading="lazy">
+          <div class="service-info">
+            <h3>Career Visibility & Personal Branding</h3>
+            <p>We position you as a top candidate in your industry by optimizing your resume, LinkedIn, and overall professional presence.</p>
+            <a href="#contact" class="service-btn">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1573496130141-209d200cebd8?auto=format&fit=crop&w=500&q=60" alt="Strategic Career Guidance" loading="lazy">
+          <div class="service-info">
+            <h3>Strategic Career Guidance</h3>
+            <p>From career pivots to executive advancement, we provide tailored strategies for job search, networking, and career growth.</p>
+            <a href="#contact" class="service-btn">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=500&q=60" alt="End-to-End Support" loading="lazy">
+          <div class="service-info">
+            <h3>End-to-End Support</h3>
+            <p>We work closely with you, offering resume writing, LinkedIn optimization, interview coaching, and job search mentorship.</p>
+            <a href="#contact" class="service-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Who We Serve Section -->
+  <section id="who-we-serve">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Who We Serve</h2>
+      <p class="section-intro animate-on-scroll">We empower individuals at every stage of their career journey through strategic personal branding and expert career consultation.</p>
+      <div class="client-types">
+        <div class="client-type animate-on-scroll">
+          <i class="fas fa-user-graduate"></i>
+          <h3>New Career Seekers</h3>
+          <p>Helping fresh graduates and entry-level professionals break into the job market.</p>
+        </div>
+        <div class="client-type animate-on-scroll">
+          <i class="fas fa-exchange-alt"></i>
+          <h3>Career Changers</h3>
+          <p>Assisting professionals in transitioning smoothly into new industries or roles.</p>
+        </div>
+        <div class="client-type animate-on-scroll">
+          <i class="fas fa-user-tie"></i>
+          <h3>Mid-Level & Senior Professionals</h3>
+          <p>Elevating experienced individuals to leadership positions.</p>
+        </div>
+        <div class="client-type animate-on-scroll">
+          <i class="fas fa-laptop-house"></i>
+          <h3>Freelancers & Consultants</h3>
+          <p>Positioning independent professionals to attract high-value clients.</p>
+        </div>
+        <div class="client-type animate-on-scroll">
+          <i class="fas fa-crown"></i>
+          <h3>Executives & Industry Leaders</h3>
+          <p>Refining executive presence for C-suite opportunities.</p>
+        </div>
+      </div>
+      <p class="section-outro animate-on-scroll">Whether you're a fresh graduate seeking direction, a professional exploring new paths, or someone with a passion but unclear career direction, we help shape and amplify your unique professional story.</p>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-us">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Why Choose The Ideal Professional?</h2>
+      <div class="reasons">
+        <div class="reason animate-on-scroll">
+          <i class="fas fa-chart-bar"></i>
+          <h3>Market-Driven Strategies</h3>
+          <p>We stay ahead of recruitment trends, ATS algorithms, and hiring patterns to ensure our clients stand out.</p>
+        </div>
+        <div class="reason animate-on-scroll">
+          <i class="fas fa-route"></i>
+          <h3>Personalized Roadmaps</h3>
+          <p>No one-size-fits-all approach—every career path is unique, and we tailor our services to individual goals.</p>
+        </div>
+        <div class="reason animate-on-scroll">
+          <i class="fas fa-trophy"></i>
+          <h3>Proven Success Stories</h3>
+          <p>Our clients experience increased interview callbacks, stronger professional networks, and faster career progression.</p>
+        </div>
+        <div class="reason animate-on-scroll">
+          <i class="fas fa-rocket"></i>
+          <h3>Full-Service Career Acceleration</h3>
+          <p>From personal branding to job search execution, we provide holistic support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta">
+    <div class="container">
+      <h2 class="animate-on-scroll">Ready to Transform Your Career?</h2>
+      <p class="animate-on-scroll">Join thousands of professionals who have accelerated their career growth with our expert services.</p>
+      <a href="#contact" class="btn animate-on-scroll">Schedule a Free Consultation</a>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials">
+    <div class="container">
+      <h2 class="section-title animate-on-scroll">Success Stories</h2>
+      <div class="testimonials">
+        <div class="testimonial animate-on-scroll">
+          <div class="testimonial-header">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe" class="testimonial-image" loading="lazy">
+            <div class="testimonial-info">
+              <h3>John Doe</h3>
+              <p>Marketing Director</p>
+            </div>
+          </div>
+          <p>"Thanks to The Ideal Professional, I landed my dream job within weeks! Their resume optimization service completely transformed my application and gave me the confidence I needed."</p>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial animate-on-scroll">
+          <div class="testimonial-header">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Smith" class="testimonial-image" loading="lazy">
+            <div class="testimonial-info">
+              <h3>Jane Smith</h3>
+              <p>Software Engineer</p>
+            </div>
+          </div>
+          <p>"Their resume optimization service is top-notch. After working with The Ideal Professional team, I received three interview calls in the first week. Highly recommended!"</p>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <div class="testimonial animate-on-scroll">
+          <div class="testimonial-header">
+            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Michael Johnson" class="testimonial-image" loading="lazy">
+            <div class="testimonial-info">
+              <h3>Michael Johnson</h3>
+              <p>Financial Analyst</p>
+            </div>
+          </div>
+          <p>"The LinkedIn profile makeover was a game-changer for me. I've had recruiters reaching out weekly since working with The Ideal Professional."</p>
+          <div class="testimonial-rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
         </div>
       </div>
     </div>
@@ -828,42 +1599,51 @@
       <h2 class="section-title animate-on-scroll">Get in Touch</h2>
       <div class="contact-container">
         <div class="contact-info animate-on-scroll">
-          <h3>Transform Your Career Today</h3>
-          <p>Fill out the form to send your details via email, and we'll respond within 24 hours.</p>
+          <h3>Let's Start Your Career Transformation</h3>
+          <p>Ready to take your professional life to the next level? Fill out the form to send your details via your email app, and we'll get back to you within 24 hours.</p>
           <div class="contact-details">
-            <div><i class="fas fa-map-marker-alt"></i> London & Birmingham, UK</div>
+            <div><i class="fas fa-map-marker-alt"></i> London & Birmingham, United Kingdom</div>
             <div><i class="fas fa-phone"></i> <a href="tel:+447435344535">+44 7435 344535</a></div>
             <div><i class="fas fa-envelope"></i> <a href="mailto:consultation@theidealprofessional.com">consultation@theidealprofessional.com</a></div>
+            <div><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</div>
           </div>
         </div>
         <form class="contact-form animate-on-scroll" id="contactForm">
           <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" name="name" id="name" required aria-required="true">
+            <input type="text" name="name" id="name" placeholder="Your Name" required aria-label="Your Name">
             <span class="error-message" id="name-error">Please enter your name.</span>
           </div>
           <div class="form-group">
-            <label for="email">Your Email</label>
-            <input type="email" name="email" id="email" required aria-required="true">
+            <input type="email" name="email" id="email" placeholder="Your Email" required aria-label="Your Email">
             <span class="error-message" id="email-error">Please enter a valid email address.</span>
           </div>
           <div class="form-group">
-            <label for="service">Select a Service</label>
-            <select name="service" id="service" required aria-required="true">
+            <input type="tel" name="phone" id="phone" placeholder="Your Phone Number (Optional)" aria-label="Your Phone Number">
+            <span class="error-message" id="phone-error">Please enter a valid phone number.</span>
+          </div>
+          <div class="form-group">
+            <select name="service" id="service" required aria-label="Select a Service">
               <option value="" disabled selected>Select a Service</option>
-              <option value="resume">Resume Optimization</option>
-              <option value="linkedin">LinkedIn Enhancement</option>
+              <option value="resume">Resume Writing & Optimization</option>
+              <option value="linkedin">LinkedIn Profile Enhancement</option>
               <option value="interview">Interview Coaching</option>
+              <option value="branding">Personal Branding</option>
+              <option value="job-search">Job Search Consultation</option>
+              <option value="other">Other Services</option>
             </select>
             <span class="error-message" id="service-error">Please select a service.</span>
           </div>
           <div class="form-group">
-            <label for="message">Your Message</label>
-            <textarea name="message" id="message" rows="5" required aria-required="true"></textarea>
+            <textarea name="message" id="message" rows="5" placeholder="Your Message" required aria-label="Your Message"></textarea>
             <span class="error-message" id="message-error">Please enter your message.</span>
           </div>
-          <button type="button" id="mailtoBtn" class="mailto-btn">Send via Email</button>
-          <div class="form-success" id="formSuccess">Email app opened. Please press "Send" to contact us.</div>
+          <button type="button" id="mailtoBtn" class="mailto-btn">Send via Your Email</button>
+          <button type="button" id="copyBtn" class="copy-btn">Copy Details to Clipboard</button>
+          <p class="mailto-instructions">Click "Send via Your Email" to open your email app with your details pre-filled. Press "Send" in your email app to reach us!</p>
+          <div class="form-success" id="formSuccess">Thank you! Your email app should have opened with your details. Please press "Send" to contact us.</div>
+          <p class="fallback-link">
+            No email app? <a href="mailto:consultation@theidealprofessional.com">Email us directly</a> or call +44 7435 344535.
+          </p>
         </form>
       </div>
     </div>
@@ -875,45 +1655,78 @@
       <div class="footer-content">
         <div class="footer-column animate-on-scroll">
           <h3>The Ideal Professional</h3>
-          <p>Helping professionals succeed with expert career services.</p>
+          <p>Helping professionals stand out and succeed in their careers.</p>
           <div class="social-links">
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           </div>
         </div>
         <div class="footer-column animate-on-scroll">
           <h3>Services</h3>
           <ul>
-            <li><a href="#services">Resume Optimization</a></li>
-            <li><a href="#services">LinkedIn Enhancement</a></li>
+            <li><a href="#services">Resume Writing</a></li>
+            <li><a href="#services">LinkedIn Optimization</a></li>
             <li><a href="#services">Interview Coaching</a></li>
+            <li><a href="#services">Personal Branding</a></li>
+            <li><a href="#services">Job Search Consultation</a></li>
+          </ul>
+        </div>
+        <div class="footer-column animate-on-scroll">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#who-we-serve">Who We Serve</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
         <div class="footer-column animate-on-scroll">
           <h3>Contact Us</h3>
           <ul>
-            <li><i class="fas fa-map-marker-alt"></i> London & Birmingham, UK</li>
+            <li><i class="fas fa-map-marker-alt"></i> London & Birmingham, United Kingdom</li>
             <li><i class="fas fa-phone"></i> <a href="tel:+447435344535">+44 7435 344535</a></li>
             <li><i class="fas fa-envelope"></i> <a href="mailto:consultation@theidealprofessional.com">consultation@theidealprofessional.com</a></li>
+            <li><i class="fas fa-clock"></i> Mon-Fri: 9:00 AM - 6:00 PM</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom animate-on-scroll">
-        <p>© <span id="currentYear"></span> The Ideal Professional. All rights reserved.</p>
+        <p>© <span id="currentYear"></span> The Ideal Professional. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
       </div>
     </div>
   </footer>
 
+  <!-- Cookie Banner -->
+  <div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-text">
+      <h4>We use cookies</h4>
+      <p>This website uses cookies to ensure you get the best experience on our website.</p>
+    </div>
+    <div class="cookie-buttons">
+      <button class="cookie-btn settings" id="cookieSettings">Cookie Settings</button>
+      <button class="cookie-btn accept" id="cookieAccept">Accept All</button>
+    </div>
+  </div>
+
   <script>
-    // Mobile Menu
+    // Set current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle with improved functionality
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navMenu = document.querySelector('nav ul');
+    const body = document.body;
     const menuOverlay = document.getElementById('menuOverlay');
 
     function toggleMenu() {
       const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
       mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
       navMenu.classList.toggle('active');
+      body.classList.toggle('menu-open');
       menuOverlay.classList.toggle('active');
       mobileMenuBtn.innerHTML = isExpanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
     }
@@ -921,33 +1734,54 @@
     mobileMenuBtn.addEventListener('click', toggleMenu);
     menuOverlay.addEventListener('click', toggleMenu);
 
-    // Smooth Scrolling
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const isMenuOpen = navMenu.classList.contains('active');
+      const isClickInsideMenu = navMenu.contains(event.target);
+      const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+      
+      if (isMenuOpen && !isClickInsideMenu && !isClickOnMenuBtn) {
+        toggleMenu();
+      }
+    });
+
+    // Smooth scrolling with menu closing
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', e => {
-        e.preventDefault();
         const targetId = anchor.getAttribute('href');
-        if (navMenu.classList.contains('active')) toggleMenu();
+        if (targetId === '#') return;
+        
+        e.preventDefault();
+        
+        // Close mobile menu if open
+        if (navMenu.classList.contains('active')) {
+          toggleMenu();
+        }
+        
+        // Scroll to target after a small delay to allow menu to close
         setTimeout(() => {
           document.querySelector(targetId)?.scrollIntoView({ behavior: 'smooth' });
         }, 100);
       });
     });
 
-    // Form Handling
+    // Form handling
     const contactForm = document.getElementById('contactForm');
     const mailtoBtn = document.getElementById('mailtoBtn');
+    const copyBtn = document.getElementById('copyBtn');
     const formSuccess = document.getElementById('formSuccess');
 
-    const showError = (fieldId, message) => {
+    const showError = (fieldId, errorId, message) => {
       const field = document.getElementById(fieldId);
-      const error = document.getElementById(`${fieldId}-error`);
+      const error = document.getElementById(errorId);
       field.classList.add('form-error');
       error.textContent = message;
       error.classList.add('active');
     };
 
     const clearErrors = () => {
-      ['name', 'email', 'service', 'message'].forEach(fieldId => {
+      const fields = ['name', 'email', 'phone', 'service', 'message'];
+      fields.forEach(fieldId => {
         const field = document.getElementById(fieldId);
         const error = document.getElementById(`${fieldId}-error`);
         field.classList.remove('form-error');
@@ -955,40 +1789,103 @@
       });
     };
 
-    mailtoBtn.addEventListener('click', () => {
-      clearErrors();
+    const validateForm = () => {
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
       const service = document.getElementById('service').value;
       const message = document.getElementById('message').value.trim();
+
       let isValid = true;
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const phoneRegex = /^\+?[\d\s-]{10,}$/;
+
+      clearErrors();
 
       if (!name) {
-        showError('name', 'Please enter your name.');
+        showError('name', 'name-error', 'Please enter your name.');
         isValid = false;
       }
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        showError('email', 'Please enter a valid email address.');
+      if (!email || !emailRegex.test(email)) {
+        showError('email', 'email-error', 'Please enter a valid email address.');
+        isValid = false;
+      }
+      if (phone && !phoneRegex.test(phone)) {
+        showError('phone', 'phone-error', 'Please enter a valid phone number.');
         isValid = false;
       }
       if (!service) {
-        showError('service', 'Please select a service.');
+        showError('service', 'service-error', 'Please select a service.');
         isValid = false;
       }
       if (!message) {
-        showError('message', 'Please enter your message.');
+        showError('message', 'message-error', 'Please enter your message.');
         isValid = false;
       }
 
-      if (isValid) {
-        const subject = encodeURIComponent('Contact Form Submission');
-        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nService: ${service}\nMessage: ${message}`);
-        window.location.href = `mailto:consultation@theidealprofessional.com?subject=${subject}&body=${body}`;
+      return { isValid, name, email, phone, service, message };
+    };
+
+    // Mailto button handler
+    mailtoBtn.addEventListener('click', () => {
+      const { isValid, name, email, phone, service, message } = validateForm();
+
+      if (!isValid) return;
+
+      const subject = encodeURIComponent('Contact Form Submission - The Ideal Professional');
+      const body = encodeURIComponent(
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Phone: ${phone || 'Not provided'}\n` +
+        `Service: ${service}\n` +
+        `Message:\n${message}\n\n` +
+        `Please reply to this email to confirm receipt. Thank you!`
+      );
+      const mailtoLink = `mailto:theidealpro@gmail.com?subject=${subject}&body=${body}`;
+
+      try {
+        window.location.href = mailtoLink;
         formSuccess.classList.add('active');
+        formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } catch (error) {
+        console.error('Mailto failed:', error);
+        alert('Unable to open your email app. Please use the "Copy Details to Clipboard" button or email consultation@theidealprofessional.com directly.');
       }
     });
 
-    // Scroll Animations
+    // Copy to clipboard handler
+    copyBtn.addEventListener('click', () => {
+      const { isValid, name, email, phone, service, message } = validateForm();
+
+      if (!isValid) return;
+
+      const text = `Name: ${name}\nEmail: ${email}\nPhone: ${phone || 'Not provided'}\nService: ${service}\nMessage:\n${message}`;
+      navigator.clipboard.writeText(text).then(() => {
+        alert('Details copied! Paste them into an email to consultation@theidealprofessional.com.');
+      }).catch(() => {
+        alert('Copy failed. Please manually copy your details and email consultation@theidealprofessional.com.');
+      });
+    });
+
+    // Cookie banner
+    const cookieBanner = document.getElementById('cookieBanner');
+    const cookieAccept = document.getElementById('cookieAccept');
+    const cookieSettings = document.getElementById('cookieSettings');
+    if (!localStorage.getItem('cookiesAccepted')) {
+      window.addEventListener('load', () => {
+        setTimeout(() => cookieBanner.style.display = 'flex', 1000);
+      });
+    }
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem('cookiesAccepted', 'true');
+      cookieBanner.style.display = 'none';
+    });
+    cookieSettings.addEventListener('click', () => {
+      alert('Cookie preferences would be managed here.');
+    });
+
+    // Scroll animations
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -996,12 +1893,45 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.2 });
+    animateElements.forEach(el => observer.observe(el));
 
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    // Lazy load images
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    if ('IntersectionObserver' in window) {
+      const lazyObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.src || img.src;
+            lazyObserver.unobserve(img);
+          }
+        });
+      });
+      lazyImages.forEach(img => lazyObserver.observe(img));
+    }
 
-    // Set Current Year
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    // Ensure responsiveness for touch devices
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        body.classList.remove('menu-open');
+        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+      }
+    });
+
+    // Detect touch devices for better interaction
+    const isTouchDevice = () => {
+      return ('ontouchstart' in window) || 
+             (navigator.maxTouchPoints > 0) || 
+             (navigator.msMaxTouchPoints > 0);
+    };
+
+    if (isTouchDevice()) {
+      document.documentElement.classList.add('touch-device');
+    }
   </script>
 </body>
 </html>
